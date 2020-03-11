@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .warn {color: red};
+    </style>
+</head>
+<body>
+<!--/*@thymesVar id="user" type=""*/-->
+<div th:each="user:${user}">
+恭喜你，<!--/*@thymesVar id="name" type=""*/-->
+<span th:text="${user.name}">名字</span>数据提交成功
+</div>
+
+</body>
+</html>

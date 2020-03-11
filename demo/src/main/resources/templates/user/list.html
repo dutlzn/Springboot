@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Bootstrap 实例</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"  type="text/css"  href="../../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../static/css/test.css">
+    <script type="text/javascript" src="../../static/js/test.js"></script>
+    <script type="text/javascript" src="../../static/js/jquery-3.4.1.js"></script>
+    <script type="text/javascript"  src="../../static/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title" style="text-align: center">
+                        用户列表
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>User Name</th>
+                    <th>PassWord</th>
+                    <th>Age</th>
+                    <th>Reg Time</th>
+                    <th>Delete</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr  th:each="user : ${users}">
+                    <th scope="row" th:text="${user.id}">1</th>
+                    <td th:text="${user.userName}">neo</td>
+                    <td th:text="${user.passWord}">Otto</td>
+                    <td th:text="${user.age}">6</td>
+                    <td th:text="${#dates.format(user.regTime, 'yyyy-MM-dd HH:mm:ss')}"></td>
+                    <td><a th:href="@{/toEdit(id=${user.id})}">edit</a></td>
+                    <td><a th:href="@{/delete(id=${user.id})}"  onclick="return confirm('确认是否删除此用户？')"  >delete</a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-2 control-label">
+                <a href="/toAdd" th:href="@{/toAdd}" class="btn btn-info">add</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
