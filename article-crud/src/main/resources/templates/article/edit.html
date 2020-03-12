@@ -10,16 +10,53 @@
     <!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/css/materialize.min.css">-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="/materialize/js/materialize.min.js"></script>
+    <script type="text/javascript" src="/materialize/js/materialize.js"></script>
 </head>
 <body>
 <div class="container">
-    <a class="waves-effect waves-light btn">按钮</a>
-    <a class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>按钮</a>
-    <a class="waves-effect waves-light btn"><i class="material-icons right">cloud</i>按钮</a>
+    <div class="row">
+        <div class="col s12">
+            <ul class="collection with-header">
+                <li class="collection-header light-blue lighten-3"><h4>修改文章</h4></li>
+            </ul>
+        </div>
+        <form class="col s12" th:action="@{/article/}+${article.id}" method="post">
+            <input type="hidden" name="_method" value="put"/>
+
+            <input type="hidden" id="id" name="id" th:field="${article.id}"/>
+            <input type="hidden" id="createTime" name="createTime" th:field="${article.createTime}"/>
+            <input type="hidden" id="createBy" name="createBy"
+                   th:field="${article.createBy}"
+            />
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">subtitles</i>
+                    <input id="title" type="text" class="validate" name="title" th:field="${article.title}">
+                    <label for="title">标题</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">mode_edit</i>
+                    <textarea id="body" class="materialize-textarea validate" name="body" th:field="${article.body}"></textarea>
+                    <label for="body">内容</label>
+                </div>
+            </div>
+            <button class="btn waves-effect waves-light right" type="submit" name="action" style="margin-right: 5px">提交
+                <i class="material-icons right">send</i>
+            </button>
+            <button class="btn waves-effect waves-light right" type="reset" name="action" style="margin-right: 5px">重置
+                <i class="material-icons right">replay</i>
+            </button>
+        </form>
+    </div>
+</div>
+
 </div>
 <!--Import jQuery before materialize.js-->
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script type="text/javascript" src="/materialize/js/materialize.min.js"></script>
+<script type="text/javascript" src="/materialize/js/materialize.js"></script>
+<script>
+</script>
 </body>
 </html>

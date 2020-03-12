@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>添加页面</title>
+    <title>详情页面</title>
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="/css/test.css" >
     <link rel="stylesheet" href="/materialize/css/materialize.css"  media="screen,projection"/>
@@ -14,11 +14,23 @@
 </head>
 <body>
 <div class="container">
-    <a class="waves-effect waves-light btn">按钮</a>
-    <a class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>按钮</a>
-    <a class="waves-effect waves-light btn"><i class="material-icons right">cloud</i>按钮</a>
+    <div class="row">
+        <div class="col s12">
+            <ul class="collection with-header">
+                <li class="collection-header light-blue lighten-3"><h4>文章详情</h4></li>
+            </ul>
+        </div>
+        <div class="col s10">
+            <h3 th:text="${article.title}"></h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12" th:text="${article.body}">
+
+        </div>
+    </div>
+    <a th:href="@{'/article/'}" class="waves-effect waves-light blue lighten-1  btn">返回</a>
 </div>
-<!--Import jQuery before materialize.js-->
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script type="text/javascript" src="/materialize/js/materialize.min.js"></script>
 </body>

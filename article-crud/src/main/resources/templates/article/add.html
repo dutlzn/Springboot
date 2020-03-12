@@ -10,20 +10,37 @@
 <!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/css/materialize.min.css">-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="/materialize/js/materialize.min.js"></script>
+    <script type="text/javascript" src="/materialize/js/materialize.js"></script>
 </head>
 <body>
 <div class="container">
     <div class="row">
-        <form class="col s12">
+        <div class="col s12">
+            <ul class="collection with-header">
+                <li class="collection-header light-blue lighten-3"><h4>添加文章</h4></li>
+            </ul>
+        </div>
+        <form class="col s12" th:action="@{/article}" method="post">
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="material-icons prefix">account_circle</i>
-                    <input id="email" type="email" class="validate">
-                    <label for="email">邮件</label>
+                    <i class="material-icons prefix">subtitles</i>
+                    <input id="title" type="text" class="validate" name="title">
+                    <label for="title">标题</label>
                 </div>
             </div>
-
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">mode_edit</i>
+                    <textarea id="body" class="materialize-textarea validate" name="body"></textarea>
+                    <label for="body">内容</label>
+                </div>
+            </div>
+            <button class="btn waves-effect waves-light right" type="submit" name="action" style="margin-right: 5px">提交
+                <i class="material-icons right">send</i>
+            </button>
+            <button class="btn waves-effect waves-light right" type="reset" name="action" style="margin-right: 5px">重置
+                <i class="material-icons right">replay</i>
+            </button>
         </form>
     </div>
     </div>
@@ -31,6 +48,8 @@
 </div>
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="/materialize/js/materialize.min.js"></script>
+    <script type="text/javascript" src="/materialize/js/materialize.js"></script>
+<script>
+</script>
 </body>
 </html>

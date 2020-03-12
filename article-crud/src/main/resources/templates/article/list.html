@@ -2,9 +2,9 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>添加页面</title>
+    <title>详情页面</title>
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="/css/test.css" >
+<!--    <link rel="stylesheet" href="/css/test.css" >-->
     <link rel="stylesheet" href="/materialize/css/materialize.css"  media="screen,projection"/>
     <!--Let browser know website is optimized for mobile-->
     <!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/css/materialize.min.css">-->
@@ -14,12 +14,75 @@
 </head>
 <body>
 <div class="container">
-    <a class="waves-effect waves-light btn">按钮</a>
-    <a class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>按钮</a>
-    <a class="waves-effect waves-light btn"><i class="material-icons right">cloud</i>按钮</a>
+    <div class="row">
+        <div class="col s12">
+            <ul class="collection with-header">
+                <li class="collection-header light-blue lighten-3"><h4>文章列表</h4></li>
+            </ul>
+        </div>
+    </div>
+    <div style="margin: 10px">
+        <a th:href="@{'/article/add'}" class="btn-floating btn-large waves-effect waves-light deep-purple darken-2 right"><i class="material-icons">add</i></a>
+    </div>
+    <table class="striped centered">
+        <thead>
+        <tr>
+            <th data-field="id">序号</th>
+            <th data-field="price">标题</th>
+            <th data-field="name">创建时间</th>
+            <th data-field="price">操作</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="item: ${page.content}">
+            <td th:text="${item.id}">张三</td>
+            <td th:text="${item.title}">17</td>
+            <td th:text="${#dates.format(item.createTime, 'yyyy-MM-dd HH:mm:ss')}">汉</td>
+            <td>
+                <a th:href="@{'/article/'+${item.id}}" class="waves-effect waves-light blue lighten-1  btn">查看</a>
+                <a th:href="@{'/article/edit/'+${item.id}}" class="waves-effect waves-light orange darken-2 btn">修改</a>
+                <button th:attr="del_uri=@{/article/}+${item.id}" class="waves-effect waves-light pink darken-1 btn deleteBtn">删除
+                </button>
+
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <!--    删除-->
+    <form id="deleteEmpForm" method="post">
+        <input type="hidden" name="_method" value="delete"/>
+    </form>
+    <div>
+        <a th:href="@{/article(start=0)}">[首页]</a>
+        <a th:if="${not page.isFirst()}" th:href="@{/article(start=${page.number-1})}">[上页]</a>
+        <a th:if="${not page.isLast()}" th:href="@{/article(start=${page.number+1})}">[下页]</a>
+        <a th:href="@{/article(start=${page.totalPages-1})}">[末页]</a>
+    </div>
+
+    <div class="fixed-action-btn horizontal">
+        <a class="btn-floating btn-large red">
+            <i class="large material-icons">mode_edit</i>
+        </a>
+        <ul>
+            <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
+            <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
+            <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
+            <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+        </ul>
+    </div>
+
 </div>
-<!--Import jQuery before materialize.js-->
-<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<!--<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>-->
 <script type="text/javascript" src="/materialize/js/materialize.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+    $(".deleteBtn").click(function(){
+        //删除
+        console.log("nihao");
+        $("#deleteEmpForm").attr("action",$(this).attr("del_uri")).submit();
+        return false;
+    });
+</script>
 </body>
 </html>
