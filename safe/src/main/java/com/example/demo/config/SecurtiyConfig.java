@@ -20,11 +20,10 @@ public class SecurtiyConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest().authenticated()
                 .and()
                 .formLogin() // 定制登录信息
-//                .loginPage("/login") // 自定义登录地址，若注释掉则使用默认登录页面
+                .loginPage("/login") // 自定义登录地址，若注释掉则使用默认登录页面
                 .permitAll()
                 .and()
-                .logout() // 退出功能 spring security自动监控了/logout
-                .permitAll()
+                .logout().permitAll()
                 .and()
                 .csrf()
                 .ignoringAntMatchers("/logout"); // 忽略退出请求的同源限制
