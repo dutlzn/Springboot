@@ -57,6 +57,12 @@ public class IndexController {
     public ModelAndView admin_main(HttpServletResponse  res,HttpServletRequest req) throws Exception {
         ModelAndView mav = new ModelAndView();
         String UserAgent = req.getHeader("User-Agent");
+        //判断AppleWebKit 和  Firefox
+        if(BrowserUtil.checkUserAgent(UserAgent)){
+            mav.setViewName("/admin/main");
+        }else{
+            mav.setViewName("/common/s_mode");
+        }
         return mav;
     }
 
