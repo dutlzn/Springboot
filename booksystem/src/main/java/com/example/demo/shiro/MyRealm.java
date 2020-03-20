@@ -22,51 +22,43 @@ import org.apache.shiro.subject.PrincipalCollection;
  * 自定义Realm
  *
  */
-public class MyRealm extends AuthorizingRealm{
-	
+public class MyRealm extends AuthorizingRealm {
+
 	@Resource
 	private UserDao userDao;
-	
+
 	/**
-	 * 授权--验证url
+	 * #授权--验证url
 	 */
 	@Override
 	protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
-		String name=(String) SecurityUtils.getSubject().getPrincipal();
-		User user=userDao.findByName(name);
-		SimpleAuthorizationInfo info=new SimpleAuthorizationInfo();
-		Set<String> roles=new HashSet<String>();
+		String name = (String) SecurityUtils.getSubject().getPrincipal();
+
+		User user = userDao.findByName(name);
+		//有了用户可以拿到，角色，  有角色，就有对应的菜单 list集合。  --- permissions
+
+		SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
+		Set<String> roles = new HashSet<String>();
 		roles.add("管理员");
-		/*List<Role> roleList=roleRepository.findByUserId(user.getId());
-		Set<String> roles=new HashSet<String>();
-		for(Role role:roleList){
-			roles.add(role.getName());
-			List<Menu> menuList=menuRepository.findByRoleId(role.getId());
-			for(Menu menu:menuList){
-				info.addStringPermission(menu.getName()); //添加权限
-			}
-		}
-		*/
-		info.addStringPermission("添加用户权限");//添加权限 
+
+		//  遍历角色所有menu
+		info.addStringPermission("添加用户权限");//添加权限   permissions
 		info.setRoles(roles);
 		return info;
 	}
-	
+
 	/**
 	 * 权限认证--登录
 	 */
 	@Override
 	protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
-		String name=(String)token.getPrincipal();//用户名  UsernamePasswordTokenr的第一个参数  name
-		User user=userDao.findByName(name);
-		if(user!=null){
-			AuthenticationInfo authcInfo=new SimpleAuthenticationInfo(user.getName(),user.getPwd(),"xxx");
+		String name = (String) token.getPrincipal();//用户名  UsernamePasswordTokenr的第一个参数  name
+		User user = userDao.findByName(name);
+		if (user != null) {
+			AuthenticationInfo authcInfo = new SimpleAuthenticationInfo(user.getName(), user.getPwd(), "xxx");
 			return authcInfo;
-		}else{
-			return null;				
+		} else {
+			return null;
 		}
 	}
-	
-	
-
 }
