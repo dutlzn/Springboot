@@ -1,156 +1,144 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html>
 <head>
-	<meta charset="UTF-8">
-	<title th:text="|${application.config.webName}   登录页面|"></title>
+<meta charset="UTF-8">
+<title th:text="|${application.config.webName}   登录页面|"></title>
 
-	<!--添加 layui  支持加载-->
-	<link rel="stylesheet" href="/layui-v2.4.5/layui/css/layui.css">
-	<script src="/layui-v2.4.5/layui/layui.js"></script>
-	<!--添加 layui  支持加载-->
+<div th:include="/common/layui"></div>
+<div th:include="/common/jq"></div>
 
-	<!--添加 jq  支持加载-->
-	<script	src="/jq/jquery_2_1.min.js"></script>
-	<!--添加 jq  支持加载-->
 
-	<!--添加 vue  支持加载-->
-	<script src="/vue/vue.min.js"></script>
-	<!--添加 vue  支持加载-->
-
-	<script>
-		$(function() {
-			$("#name").focus();
+<script>
+$(function() {
+		$("#name").focus();
+});
+	
+	function go_login() {
+		var index = layer.load(1, {
+			shade : [ 0.1, '#fff' ]
+		//0.1透明度的白色背景
 		});
-
-		function go_login() {
-			var index = layer.load(1, {
-				shade : [ 0.1, '#fff' ]
-				//0.1透明度的白色背景
-			});
-
-			var name = $("#name").val();
-			var password = $("#password").val();
-
-			if (name == null || name == "") {
+		
+		var name = $("#name").val();
+		var password = $("#password").val();
+		
+		if (name == null || name == "") {
+			layer.closeAll();
+			layer.alert('请输入帐号!');
+			return;
+		}
+		
+		if (password == null || password == "") {
+			layer.closeAll();
+			layer.alert('请输入密码!');
+			return;
+		}
+		
+		$.post('/user/login', {name : name,password : password
+		}, function(result) {
+			if (result.success) {
 				layer.closeAll();
-				layer.alert('请输入帐号!');
-				return;
-			}
-
-			if (password == null || password == "") {
+				window.location.href = "/admin/main";
+			} else {
 				layer.closeAll();
-				layer.alert('请输入密码!');
-				return;
+				layer.alert(result.msg);
 			}
+		}, 'json');
+	}
+</script>
 
-			$.post('/user/login', {
-				name : name,
-				password : password
-			}, function(result) {
-				if (result.success) {
-					layer.closeAll();
-					window.location.href = "/admin/main";
-				} else {
-					layer.closeAll();
-					layer.alert(result.msg);
-				}
-			}, 'json');
-		}
+<style>
+body {
+	background: #ebebeb;
+}
 
-		// 刷新页面 重置数据
-		function clearData(){
-			window.location.reload();
-		}
-	</script>
+*{
+	padding: 0px;
+	margin: 0px;
+}
 
-	<style>
-		@charset "utf-8";
-		/*通用样式*/
-		* {
-			margin: 0;
-			padding: 0;
-		}
-		/*主体样式*/
-		body {
-			/*清除下划线*/
-			text-decoration: none;
-			/*文字居中*/
-			text-align: center;
-			/*背景颜色*/
-			background: #23262E;
-		}
-		.login-main {
-			margin: 0 auto;
-		}
-		.layui-elip {
-			font-size: 24px;
-			/*白色字体*/
-			color: #fff;
-			/*没有下划线*/
-			text-decoration: none;
-			/*粗体*/
-			font-weight: bold;
-			/*和上下的边距*/
-			margin-top: 100px;
-			margin-bottom: 30px;
-		}
-		.layui-form-item {
-			/*左右居中*/
-			margin: 0 auto;
-			/*宽度*/
-			width: 250px;
-			/*text-align: center;*/
-		}
+.top_div {
+	background: #008ead;
+	width: 100%;
+	height: 400px;
+}
 
-		.line1 {
-			/*盒子大小*/
-			height: 50px;
-			/*输入框大小*/
-			line-height: 50px;
-		}
-	</style>
+.content {
+ 	box-shadow: 0px 0px 66px 2px rgba(0,0,0,0.4);
+	margin-bottom:50px;
+	background: rgb(255, 255, 255);
+	margin: -100px auto auto;
+	border: 1px solid rgb(231, 231, 231);
+	border-image: none;
+	width: 450px;
+	height: 200px;
+	padding-top: 20px;
+	padding-right: 20px;
+	border-radius: 3px;
+}
+
+.layui-form-item {
+	margin-bottom: 2px;
+	clear: both;
+}
+
+.layui-form-label {
+	width: 38px;
+}
+
+.layui-input-block {
+	margin-left: 70px;
+}
+</style>
 
 </head>
 <script>
 </script>
 <body id="app">
-<div class="login-main">
-	<header class="layui-elip"th:text="|${application.config.webName}   登录页面|"></header>
-	<div id="fm" class="layui-form-item" name="form1">
-		<div class="line1">
-			<input type="text" id="name" required  lay-verify="required" placeholder="账号" autocomplete="off" class="layui-input">
+	
+	<div class="top_div"></div>
+	<div class="content">
+		<div id="fm" class="layui-form" style="margin-bottom: 26px;" >
+			<div class="layui-form-item">
+				<label class="layui-form-label">帐号</label>
+				<div class="layui-input-block">
+					<input type="text"  id="name" autocomplete="off"  placeholder="请输入帐号" onkeydown="if(event.keyCode==13) $('#password').focus()" class="layui-input">
+				</div>
+			</div>
+			
+			<div class="layui-form-item">
+				<label class="layui-form-label">密码</label>
+				<div class="layui-input-block">
+					<input type="password" id="password" autocomplete="off" placeholder="请输入密码"  onkeydown="if(event.keyCode==13) go_login()"  class="layui-input">
+				</div>
+			</div>
 		</div>
-		<div class="line1">
-			<input type="password" id="password" required  lay-verify="required" placeholder="密码" autocomplete="off" class="layui-input">
-		</div>
-		<div class="line1 login-btn">
-			<button type="submit" class="layui-btn" onclick="go_login()" name="btn1" value="登录">登录</button>
-			<button type="reset" onclick="clearData()" class="layui-btn layui-btn-primary">重置</button>
+		
+		<div class="layui-form-item">
+			<div class="layui-input-block">
+				<button class="layui-btn" onclick="go_login()" lay-submit="" lay-filter="demo1">登陆</button>
+				<button type="reset" onclick="clearData()" class="layui-btn layui-btn-primary">重置</button>
+			</div>
 		</div>
 	</div>
-</div>
-
+	
+	
+	<div style="text-align: center; font-size: 13px; color: #525252; padding-top: 30px; "></div>
+	
 </body>
 
 <script>
 	layui.use([ 'laydate', 'laypage', 'layer', 'table', 'carousel', 'upload',
-		'element' ], function() {
+			'element' ], function() {
 		var laydate = layui.laydate //日期
-				, laypage = layui.laypage //分页
-				, layer = layui.layer //弹层
-				, table = layui.table //表格
-				, carousel = layui.carousel //轮播
-				, upload = layui.upload //上传
-				, element = layui.element; //元素操作
-
+		, laypage = layui.laypage //分页
+		, layer = layui.layer //弹层
+		, table = layui.table //表格
+		, carousel = layui.carousel //轮播
+		, upload = layui.upload //上传
+		, element = layui.element; //元素操作
+		
 	});
 </script>
 
-<script>
-	var app = new Vue({
-		el : '#app',
-		data : {
-		}
-	});
-</script>
 </html>

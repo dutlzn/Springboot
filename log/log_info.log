@@ -1,0 +1,313 @@
+2020-03-21 16:00:22.060 [main] INFO  sys.demo.DemoApplication - Starting DemoApplication on DESKTOP-QSKUJMQ with PID 18024 (D:\springbootcode\springbootshizhan\friday\demo\target\classes started by Administrator in D:\springbootcode\springbootshizhan\friday\demo)
+2020-03-21 16:00:22.062 [main] INFO  sys.demo.DemoApplication - The following profiles are active: dev
+2020-03-21 16:00:23.076 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-03-21 16:00:23.087 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-03-21 16:00:23.088 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-03-21 16:00:23.089 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-21 16:00:23.168 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-03-21 16:00:23.169 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1060 ms
+2020-03-21 16:00:23.334 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-21 16:00:23.487 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2020-03-21 16:00:23.628 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-03-21 16:00:23.808 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-03-21 16:00:23.828 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-21 16:00:23.831 [main] INFO  sys.demo.DemoApplication - Started DemoApplication in 2.485 seconds (JVM running for 3.091)
+2020-03-21 16:03:51.808 [main] INFO  sys.demo.DemoApplication - Starting DemoApplication on DESKTOP-QSKUJMQ with PID 1940 (D:\springbootcode\springbootshizhan\friday\demo\target\classes started by Administrator in D:\springbootcode\springbootshizhan\friday\demo)
+2020-03-21 16:03:51.811 [main] INFO  sys.demo.DemoApplication - The following profiles are active: dev
+2020-03-21 16:03:52.756 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-03-21 16:03:52.765 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-03-21 16:03:52.766 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-03-21 16:03:52.766 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-21 16:03:52.908 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-03-21 16:03:52.909 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 999 ms
+2020-03-21 16:03:53.911 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-03-21 16:03:54.107 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-21 16:03:54.369 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-03-21 16:03:54.390 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-21 16:03:54.394 [main] INFO  sys.demo.DemoApplication - Started DemoApplication in 3.023 seconds (JVM running for 3.526)
+2020-03-21 16:05:53.246 [main] INFO  sys.demo.DemoApplication - Starting DemoApplication on DESKTOP-QSKUJMQ with PID 14572 (D:\springbootcode\springbootshizhan\friday\demo\target\classes started by Administrator in D:\springbootcode\springbootshizhan\friday\demo)
+2020-03-21 16:05:53.301 [main] INFO  sys.demo.DemoApplication - The following profiles are active: dev
+2020-03-21 16:05:54.406 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-03-21 16:05:54.414 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-03-21 16:05:54.414 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-03-21 16:05:54.414 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-21 16:05:54.490 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-03-21 16:05:54.491 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1132 ms
+2020-03-21 16:05:54.721 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-03-21 16:05:54.904 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-21 16:05:55.170 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-03-21 16:05:55.189 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-21 16:05:55.193 [main] INFO  sys.demo.DemoApplication - Started DemoApplication in 2.539 seconds (JVM running for 3.188)
+2020-03-21 16:31:31.109 [main] INFO  sys.demo.DemoApplication - Starting DemoApplication on DESKTOP-QSKUJMQ with PID 11380 (D:\springbootcode\springbootshizhan\friday\demo\target\classes started by Administrator in D:\springbootcode\springbootshizhan\friday\demo)
+2020-03-21 16:31:31.112 [main] INFO  sys.demo.DemoApplication - The following profiles are active: dev
+2020-03-21 16:31:31.914 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-03-21 16:31:31.920 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-03-21 16:31:31.921 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-03-21 16:31:31.921 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-21 16:31:31.985 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-03-21 16:31:31.985 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 831 ms
+2020-03-21 16:31:32.256 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-03-21 16:31:32.575 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-21 16:31:32.730 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-03-21 16:31:32.745 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-21 16:31:32.747 [main] INFO  sys.demo.DemoApplication - Started DemoApplication in 2.064 seconds (JVM running for 3.073)
+2020-03-21 16:34:18.402 [main] INFO  sys.demo.DemoApplication - Starting DemoApplication on DESKTOP-QSKUJMQ with PID 18388 (D:\springbootcode\springbootshizhan\friday\demo\target\classes started by Administrator in D:\springbootcode\springbootshizhan\friday\demo)
+2020-03-21 16:34:18.457 [main] INFO  sys.demo.DemoApplication - The following profiles are active: dev
+2020-03-21 16:34:19.465 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-03-21 16:34:19.472 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-03-21 16:34:19.472 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-03-21 16:34:19.472 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-21 16:34:19.542 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-03-21 16:34:19.542 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1037 ms
+2020-03-21 16:34:19.847 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-03-21 16:34:20.070 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-21 16:34:20.267 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-03-21 16:34:20.288 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-21 16:34:20.291 [main] INFO  sys.demo.DemoApplication - Started DemoApplication in 2.438 seconds (JVM running for 3.054)
+2020-03-21 16:34:59.610 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-21 16:34:59.611 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-03-21 16:34:59.651 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 40 ms
+2020-03-21 16:35:04.309 [http-nio-8080-exec-2] INFO  sys.demo.controller.UserController - UserController.user(): param ( username = admin )
+2020-03-21 16:36:41.042 [main] INFO  sys.demo.DemoApplication - Starting DemoApplication on DESKTOP-QSKUJMQ with PID 4368 (D:\springbootcode\springbootshizhan\friday\demo\target\classes started by Administrator in D:\springbootcode\springbootshizhan\friday\demo)
+2020-03-21 16:36:41.046 [main] INFO  sys.demo.DemoApplication - The following profiles are active: dev
+2020-03-21 16:36:41.901 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-03-21 16:36:41.907 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-03-21 16:36:41.908 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-03-21 16:36:41.908 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-21 16:36:41.971 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-03-21 16:36:41.971 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 853 ms
+2020-03-21 16:36:42.244 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-03-21 16:36:42.388 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-21 16:36:42.541 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-03-21 16:36:42.557 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-21 16:36:42.559 [main] INFO  sys.demo.DemoApplication - Started DemoApplication in 1.924 seconds (JVM running for 2.439)
+2020-03-21 16:36:52.105 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-21 16:36:52.105 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-03-21 16:36:52.111 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 6 ms
+2020-03-21 16:36:52.134 [http-nio-8080-exec-1] INFO  sys.demo.controller.UserController - UserController.user(): param ( username = admin )
+2020-03-21 16:37:01.384 [http-nio-8080-exec-6] INFO  sys.demo.controller.UserController - UserController.user(): param ( username = user )
+2020-03-21 16:38:47.760 [main] INFO  sys.demo.DemoApplication - Starting DemoApplication on DESKTOP-QSKUJMQ with PID 13136 (D:\springbootcode\springbootshizhan\friday\demo\target\classes started by Administrator in D:\springbootcode\springbootshizhan\friday\demo)
+2020-03-21 16:38:47.762 [main] INFO  sys.demo.DemoApplication - The following profiles are active: dev
+2020-03-21 16:38:48.699 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-03-21 16:38:48.706 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-03-21 16:38:48.706 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-03-21 16:38:48.706 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-21 16:38:48.795 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-03-21 16:38:48.795 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 991 ms
+2020-03-21 16:38:49.246 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-03-21 16:38:49.388 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-21 16:38:49.572 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-03-21 16:38:49.588 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-21 16:38:49.590 [main] INFO  sys.demo.DemoApplication - Started DemoApplication in 2.55 seconds (JVM running for 3.323)
+2020-03-21 16:38:51.291 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-21 16:38:51.291 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-03-21 16:38:51.295 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2020-03-21 16:38:51.317 [http-nio-8080-exec-1] INFO  sys.demo.controller.UserController - UserController.user(): param ( username = user )
+2020-03-21 16:54:53.569 [main] INFO  sys.demo.DemoApplication - Starting DemoApplication on DESKTOP-QSKUJMQ with PID 2032 (D:\springbootcode\springbootshizhan\friday\demo\target\classes started by Administrator in D:\springbootcode\springbootshizhan\friday\demo)
+2020-03-21 16:54:53.587 [main] INFO  sys.demo.DemoApplication - The following profiles are active: dev
+2020-03-21 16:54:54.766 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-03-21 16:54:54.773 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-03-21 16:54:54.774 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-03-21 16:54:54.774 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-21 16:54:54.856 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-03-21 16:54:54.856 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1232 ms
+2020-03-21 16:54:55.503 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-03-21 16:54:55.650 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-21 16:54:55.695 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-03-21 16:54:55.840 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-03-21 16:54:55.855 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-21 16:54:55.857 [main] INFO  sys.demo.DemoApplication - Started DemoApplication in 2.975 seconds (JVM running for 3.678)
+2020-03-21 16:55:21.885 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-21 16:55:21.885 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-03-21 16:55:21.889 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2020-03-21 16:55:56.255 [main] INFO  sys.demo.DemoApplication - Starting DemoApplication on DESKTOP-QSKUJMQ with PID 18140 (D:\springbootcode\springbootshizhan\friday\demo\target\classes started by Administrator in D:\springbootcode\springbootshizhan\friday\demo)
+2020-03-21 16:55:56.258 [main] INFO  sys.demo.DemoApplication - The following profiles are active: dev
+2020-03-21 16:55:57.144 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-03-21 16:55:57.151 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-03-21 16:55:57.151 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-03-21 16:55:57.151 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-21 16:55:57.213 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-03-21 16:55:57.213 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 891 ms
+2020-03-21 16:55:57.475 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-03-21 16:55:57.604 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-21 16:55:57.648 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-03-21 16:55:57.770 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-03-21 16:55:57.785 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-21 16:55:57.787 [main] INFO  sys.demo.DemoApplication - Started DemoApplication in 1.923 seconds (JVM running for 2.436)
+2020-03-21 16:56:11.299 [main] INFO  sys.demo.DemoApplication - Starting DemoApplication on DESKTOP-QSKUJMQ with PID 8568 (D:\springbootcode\springbootshizhan\friday\demo\target\classes started by Administrator in D:\springbootcode\springbootshizhan\friday\demo)
+2020-03-21 16:56:11.301 [main] INFO  sys.demo.DemoApplication - The following profiles are active: dev
+2020-03-21 16:56:12.105 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-03-21 16:56:12.111 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-03-21 16:56:12.111 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-03-21 16:56:12.111 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-21 16:56:12.174 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-03-21 16:56:12.174 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 844 ms
+2020-03-21 16:56:12.434 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-03-21 16:56:12.557 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-21 16:56:12.596 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-03-21 16:56:12.713 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-03-21 16:56:12.728 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-21 16:56:12.730 [main] INFO  sys.demo.DemoApplication - Started DemoApplication in 1.874 seconds (JVM running for 2.384)
+2020-03-21 16:56:17.610 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-21 16:56:17.610 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-03-21 16:56:17.614 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2020-03-21 16:57:08.999 [main] INFO  sys.demo.DemoApplication - Starting DemoApplication on DESKTOP-QSKUJMQ with PID 16608 (D:\springbootcode\springbootshizhan\friday\demo\target\classes started by Administrator in D:\springbootcode\springbootshizhan\friday\demo)
+2020-03-21 16:57:09.003 [main] INFO  sys.demo.DemoApplication - The following profiles are active: dev
+2020-03-21 16:57:09.807 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-03-21 16:57:09.813 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-03-21 16:57:09.813 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-03-21 16:57:09.814 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-21 16:57:09.876 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-03-21 16:57:09.876 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 839 ms
+2020-03-21 16:57:10.147 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-03-21 16:57:10.271 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-21 16:57:10.311 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-03-21 16:57:10.425 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-03-21 16:57:10.439 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-21 16:57:10.442 [main] INFO  sys.demo.DemoApplication - Started DemoApplication in 1.904 seconds (JVM running for 2.394)
+2020-03-21 16:57:42.339 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-21 16:57:42.339 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-03-21 16:57:42.343 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2020-03-21 16:58:57.785 [main] INFO  sys.demo.DemoApplication - Starting DemoApplication on DESKTOP-QSKUJMQ with PID 4412 (D:\springbootcode\springbootshizhan\friday\demo\target\classes started by Administrator in D:\springbootcode\springbootshizhan\friday\demo)
+2020-03-21 16:58:57.802 [main] INFO  sys.demo.DemoApplication - The following profiles are active: dev
+2020-03-21 16:58:58.944 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-03-21 16:58:58.952 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-03-21 16:58:58.952 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-03-21 16:58:58.952 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-21 16:58:59.027 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-03-21 16:58:59.027 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1188 ms
+2020-03-21 16:58:59.532 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-03-21 16:58:59.753 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-21 16:58:59.800 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-03-21 16:58:59.933 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-03-21 16:58:59.949 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-21 16:58:59.951 [main] INFO  sys.demo.DemoApplication - Started DemoApplication in 2.934 seconds (JVM running for 3.978)
+2020-03-21 17:00:47.179 [main] INFO  sys.demo.DemoApplication - Starting DemoApplication on DESKTOP-QSKUJMQ with PID 8400 (D:\springbootcode\springbootshizhan\friday\demo\target\classes started by Administrator in D:\springbootcode\springbootshizhan\friday\demo)
+2020-03-21 17:00:47.188 [main] INFO  sys.demo.DemoApplication - The following profiles are active: dev
+2020-03-21 17:00:48.266 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-03-21 17:00:48.276 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-03-21 17:00:48.278 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-03-21 17:00:48.278 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-21 17:00:48.351 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-03-21 17:00:48.351 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1058 ms
+2020-03-21 17:00:48.693 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-03-21 17:00:48.840 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-21 17:00:48.885 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-03-21 17:00:49.021 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-03-21 17:00:49.040 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-21 17:00:49.042 [main] INFO  sys.demo.DemoApplication - Started DemoApplication in 2.334 seconds (JVM running for 2.931)
+2020-03-21 17:00:51.660 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-21 17:00:51.661 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-03-21 17:00:51.664 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2020-03-21 17:25:12.976 [main] INFO  sys.demo.DemoApplication - Starting DemoApplication on DESKTOP-QSKUJMQ with PID 19352 (D:\springbootcode\springbootshizhan\friday\demo\target\classes started by Administrator in D:\springbootcode\springbootshizhan\friday\demo)
+2020-03-21 17:25:12.987 [main] INFO  sys.demo.DemoApplication - The following profiles are active: dev
+2020-03-21 17:25:15.176 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-03-21 17:25:15.192 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-03-21 17:25:15.193 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-03-21 17:25:15.202 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-21 17:25:15.357 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-03-21 17:25:15.357 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2301 ms
+2020-03-21 17:25:16.231 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-03-21 17:25:16.473 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-21 17:25:16.559 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-03-21 17:25:16.789 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-03-21 17:25:16.836 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-21 17:25:16.846 [main] INFO  sys.demo.DemoApplication - Started DemoApplication in 5.089 seconds (JVM running for 7.17)
+2020-03-21 17:25:16.923 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-21 17:25:16.923 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-03-21 17:25:16.934 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 11 ms
+2020-03-21 18:26:51.837 [main] INFO  sys.demo.DemoApplication - Starting DemoApplication on DESKTOP-QSKUJMQ with PID 4388 (D:\springbootcode\springbootshizhan\friday\demo\target\classes started by Administrator in D:\springbootcode\springbootshizhan\friday\demo)
+2020-03-21 18:26:51.849 [main] INFO  sys.demo.DemoApplication - The following profiles are active: dev
+2020-03-21 18:26:54.602 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-03-21 18:26:54.609 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-03-21 18:26:54.609 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-03-21 18:26:54.609 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-21 18:26:54.696 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-03-21 18:26:54.696 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2791 ms
+2020-03-21 18:26:55.355 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-03-21 18:26:55.544 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-21 18:26:55.606 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-03-21 18:26:55.775 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-03-21 18:26:55.797 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-21 18:26:55.799 [main] INFO  sys.demo.DemoApplication - Started DemoApplication in 4.841 seconds (JVM running for 6.025)
+2020-03-21 18:26:57.396 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-21 18:26:57.396 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-03-21 18:26:57.401 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 5 ms
+2020-03-21 18:26:58.595 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1584786419; Hm_lpvt_b393d153aeb26b46e9431fabaf0f6190=1584786419] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-03-21 18:31:29.295 [main] INFO  sys.demo.DemoApplication - Starting DemoApplication on DESKTOP-QSKUJMQ with PID 13956 (D:\springbootcode\springbootshizhan\friday\demo\target\classes started by Administrator in D:\springbootcode\springbootshizhan\friday\demo)
+2020-03-21 18:31:29.326 [main] INFO  sys.demo.DemoApplication - The following profiles are active: dev
+2020-03-21 18:31:30.462 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-03-21 18:31:30.470 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-03-21 18:31:30.470 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-03-21 18:31:30.470 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-21 18:31:30.557 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-03-21 18:31:30.557 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1199 ms
+2020-03-21 18:31:31.227 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-03-21 18:31:31.434 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-21 18:31:31.480 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-03-21 18:31:31.697 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-03-21 18:31:31.714 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-21 18:31:31.716 [main] INFO  sys.demo.DemoApplication - Started DemoApplication in 2.998 seconds (JVM running for 4.625)
+2020-03-21 18:31:35.433 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1584786419; Hm_lpvt_b393d153aeb26b46e9431fabaf0f6190=1584786419] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-03-21 18:31:35.437 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-21 18:31:35.438 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-03-21 18:31:35.441 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2020-03-21 19:24:18.570 [main] INFO  sys.demo.DemoApplication - Starting DemoApplication on DESKTOP-QSKUJMQ with PID 14872 (D:\springbootcode\springbootshizhan\friday\demo\target\classes started by Administrator in D:\springbootcode\springbootshizhan\friday\demo)
+2020-03-21 19:24:18.573 [main] INFO  sys.demo.DemoApplication - The following profiles are active: dev
+2020-03-21 19:24:19.970 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-03-21 19:24:19.989 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-03-21 19:24:19.990 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-03-21 19:24:19.991 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-21 19:24:20.135 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-03-21 19:24:20.135 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1515 ms
+2020-03-21 19:24:20.738 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-03-21 19:24:20.907 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-21 19:24:20.964 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-03-21 19:24:21.152 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-03-21 19:24:21.187 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-21 19:24:21.189 [main] INFO  sys.demo.DemoApplication - Started DemoApplication in 3.564 seconds (JVM running for 4.886)
+2020-03-21 19:24:34.312 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1584786419; Hm_lpvt_b393d153aeb26b46e9431fabaf0f6190=1584789802] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-03-21 19:24:34.317 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-21 19:24:34.317 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-03-21 19:24:34.324 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 7 ms
+2020-03-21 19:24:55.882 [main] INFO  sys.demo.DemoApplication - Starting DemoApplication on DESKTOP-QSKUJMQ with PID 18732 (D:\springbootcode\springbootshizhan\friday\demo\target\classes started by Administrator in D:\springbootcode\springbootshizhan\friday\demo)
+2020-03-21 19:24:55.923 [main] INFO  sys.demo.DemoApplication - The following profiles are active: dev
+2020-03-21 19:24:56.739 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-03-21 19:24:56.745 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-03-21 19:24:56.746 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-03-21 19:24:56.746 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-21 19:24:56.809 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-03-21 19:24:56.810 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 859 ms
+2020-03-21 19:24:57.085 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-03-21 19:24:57.218 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-21 19:24:57.262 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-03-21 19:24:57.389 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-03-21 19:24:57.406 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-21 19:24:57.409 [main] INFO  sys.demo.DemoApplication - Started DemoApplication in 1.947 seconds (JVM running for 2.466)
+2020-03-21 19:25:21.929 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1584786419; Hm_lpvt_b393d153aeb26b46e9431fabaf0f6190=1584789802] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-03-21 19:25:21.935 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-21 19:25:21.936 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-03-21 19:25:21.940 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2020-03-21 19:30:17.143 [main] INFO  sys.demo.DemoApplication - Starting DemoApplication on DESKTOP-QSKUJMQ with PID 6540 (D:\springbootcode\springbootshizhan\friday\demo\target\classes started by Administrator in D:\springbootcode\springbootshizhan\friday\demo)
+2020-03-21 19:30:17.147 [main] INFO  sys.demo.DemoApplication - The following profiles are active: dev
+2020-03-21 19:30:18.055 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-03-21 19:30:18.063 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-03-21 19:30:18.064 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-03-21 19:30:18.064 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-21 19:30:18.150 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-03-21 19:30:18.150 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 909 ms
+2020-03-21 19:30:18.461 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2020-03-21 19:30:18.591 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-21 19:30:18.633 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-03-21 19:30:18.758 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-03-21 19:30:18.774 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-21 19:30:18.776 [main] INFO  sys.demo.DemoApplication - Started DemoApplication in 2.073 seconds (JVM running for 2.632)
+2020-03-21 19:30:23.642 [http-nio-8080-exec-1] INFO  org.apache.tomcat.util.http.parser.Cookie - A cookie header was received [1584786419; Hm_lpvt_b393d153aeb26b46e9431fabaf0f6190=1584789802] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-03-21 19:30:23.646 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-21 19:30:23.647 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-03-21 19:30:23.650 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 3 ms
