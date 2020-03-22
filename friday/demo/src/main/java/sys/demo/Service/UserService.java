@@ -10,4 +10,8 @@ public interface UserService {
     Results<SysUser> getAllUsersByPage(Integer offset, Integer limit);
 
     Results<SysUser> save(SysUser userDto, Integer roleId);
+
+    SysUser getUserByPhone(String telephone);
+
+    SysUser getUserByName(String username);
 }
