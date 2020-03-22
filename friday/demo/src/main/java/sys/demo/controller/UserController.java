@@ -3,18 +3,22 @@ package sys.demo.controller;
 import lombok.experimental.PackagePrivate;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.context.request.WebRequest;
 import sys.demo.Service.UserService;
 import sys.demo.base.result.PageTableRequest;
 import sys.demo.base.result.Results;
+import sys.demo.dto.UserDto;
 import sys.demo.model.SysUser;
+import sys.demo.util.MD5;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 //import javax.xml.transform.Result;
 
@@ -59,6 +63,28 @@ public class UserController
         sysUser.setUsername("lzn");
         model.addAttribute(sysUser);
         return "user/user-add";
+    }
+
+    @PostMapping("/add")
+    @ResponseBody
+    public Results<SysUser> saveUser(UserDto userDto, Integer roleId) {
+//        SysUser sysUser = null ;
+//
+//        sysUser = userService.getUserByPhone(userDto.getTelephone());
+//        if(sysUser != null && !(sysUser.getId().equals(userDto.getId()))){
+//            return Results.failure(ResponseCode.PHONE_REPEAT.getCode(), ResponseCode.PHONE_REPEAT.getMessage());
+//        }
+
+        userDto.setStatus(1);
+        userDto.setPassword(MD5.crypt(userDto.getPassword()));
+        return userService.save(userDto, roleId);
+    }
+
+    String pattern = "yyyy-MM-dd";
+    @InitBinder //表单到方法的数据绑定
+    public void initBinder(WebDataBinder binder, WebRequest request){
+        // 自定义转换器
+        binder.registerCustomEditor(Date.class, new CustomDateEditor(new SimpleDateFormat(pattern),true));
     }
 
 }

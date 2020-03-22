@@ -1,8 +1,6 @@
 package sys.demo.dao;
 
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 import sys.demo.model.SysUser;
 
 import java.util.List;
@@ -17,4 +15,8 @@ public interface UserDao {
 
     @Select("select count(*) from sys_user t")
     Long countAllUsers();
+
+    @Options(useGeneratedKeys = true, keyProperty = "id")
+    @Insert("insert into sys_user(username, password, nickname, headImgUrl, phone, telephone, email, birthday, sex, status, createTime, updateTime) values(#{username}, #{password}, #{nickname}, #{headImgUrl}, #{phone}, #{telephone}, #{email}, #{birthday}, #{sex}, #{status}, now(), now())")
+    int save(SysUser user);
 }
