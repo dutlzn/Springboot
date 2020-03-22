@@ -73,6 +73,9 @@
                     ,{field: 'status', title: '状态',  templet:function(d){
                         return  d.status == '1' ? "启动":"禁用";
                     }}
+                    ,{field: 'sex', title:'性别', templet: function(d){
+                        return  d.sex == '1' ? "男":"女";
+                     }}
                     ,{field: 'birthday', title: '生日'}
                     ,{title:'操作', toolbar: '#barDemo' }
                 ]
