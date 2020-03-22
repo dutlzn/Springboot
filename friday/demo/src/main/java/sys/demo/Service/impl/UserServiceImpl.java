@@ -82,6 +82,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public Results<SysUser> getUserByFuzzyUsername(String username, Integer offset, Integer limit) {
+        return Results.success(userDao.getUserByFuzzyUsername(username).intValue(), userDao.getUserByFuzzyUsernameByPage(username, offset, limit));
+    }
+
+    @Override
     public int deleteUser(Long id) {
         //sysroleuser
         roleUserDao.deleteRoleUserByUserId(id.intValue());

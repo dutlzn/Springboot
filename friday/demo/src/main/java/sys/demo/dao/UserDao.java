@@ -34,4 +34,10 @@ public interface UserDao {
 
     @Delete("delete from sys_user where id = #{userId}")
     int deleteUser(int userId);
+
+    @Select("select count(*) from sys_user t where t.username like '%${username}%'")
+    Long getUserByFuzzyUsername(@Param("username") String username);
+
+    @Select("select * from sys_user t where t.username like '%${username}%' limit #{startPosition} , #{limit}")
+    List<SysUser> getUserByFuzzyUsernameByPage(@Param("username") String username, @Param("startPosition") Integer startPosition,  @Param("limit") Integer limit);
 }

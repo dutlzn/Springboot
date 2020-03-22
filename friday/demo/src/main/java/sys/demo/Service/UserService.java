@@ -20,4 +20,6 @@ public interface UserService {
     Results<SysUser> updateUser(UserDto userDto, Integer roleId);
 
     int deleteUser(Long id);
+
+    Results<SysUser> getUserByFuzzyUsername(String username, Integer offset, Integer limit);
 }
