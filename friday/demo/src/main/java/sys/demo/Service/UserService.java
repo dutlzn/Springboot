@@ -14,4 +14,6 @@ public interface UserService {
     SysUser getUserByPhone(String telephone);
 
     SysUser getUserByName(String username);
+
+    Object getUserById(Long id);
 }

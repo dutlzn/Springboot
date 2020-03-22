@@ -25,4 +25,7 @@ public interface UserDao {
 
     @Select("select * from sys_user t where t.username = #{username}")
     SysUser getUserByUsername(String username);
+
+    @Select("select * from sys_user t where t.id = #{id}")
+    SysUser getUserById(Long id);
 }

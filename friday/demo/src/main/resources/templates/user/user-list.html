@@ -46,6 +46,7 @@
 
                         <div class="layui-card-body ">
                             <table class="layui-hide" id="table" lay-filter="member"></table>
+<!--                            lay-filter相当于id的选择器-->
                         </div>
 
                         <div class="layui-card-body ">
@@ -88,6 +89,31 @@
                     ,{title:'操作', toolbar: '#barDemo' }
                 ]
                 ]
+        });
+
+        //监听工具条
+        table.on('tool(member)', function(obj){
+            var data = obj.data;
+            if(obj.event === 'del'){
+                layer.confirm('真的删除行么', function(index){
+                    $.ajax({
+                        url:"/user/delete",
+                        type:"GET",
+                        data:{id:data.id},
+                        dataType:'json',
+                        success:function(result){
+                            layer.alert("删除成功", {icon: 1},function (index1) {
+                                layer.close(index1);
+                                xadmin.father_reload();
+                                //table.reload('table');
+                            });
+                        },
+                    });
+
+                });
+            } else if(obj.event === 'edit'){
+                xadmin.open('编辑用户信息','/user/edit/?id='+data.id);
+            }
         });
 
     });
