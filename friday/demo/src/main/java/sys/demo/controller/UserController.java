@@ -100,4 +100,24 @@ public class UserController
         return "user/user-edit";
     }
 
+    @PostMapping("/edit")
+    @ResponseBody
+    public Results<SysUser> updateUser(UserDto userDto, Integer roleId) {
+        SysUser sysUser = null ;
+
+        sysUser = userService.getUserByPhone(userDto.getTelephone());
+        if(sysUser != null && !(sysUser.getId().equals(userDto.getId()))){
+            return Results.failure(ResponseCode.PHONE_REPEAT.getCode(), ResponseCode.PHONE_REPEAT.getMessage());
+        }
+
+        //用户名 唯一
+        sysUser = userService.getUserByName(userDto.getUsername());
+        if(sysUser != null && !(sysUser.getId().equals(userDto.getId()))){
+            return Results.failure(ResponseCode.USERNAME_REPEAT.getCode(), ResponseCode.USERNAME_REPEAT.getMessage());
+        }
+
+        return userService.updateUser(userDto, roleId);
+    }
+
+
 }

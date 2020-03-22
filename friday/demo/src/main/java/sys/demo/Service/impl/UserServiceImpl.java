@@ -61,5 +61,25 @@ public class UserServiceImpl implements UserService {
         return userDao.getUserById(id);
     }
 
+    @Override
+    public Results<SysUser> updateUser(UserDto userDto, Integer roleId) {
+        if(roleId != null){
+            //sysuser
+            userDao.updateUser(userDto);
+            //sysroleuser update save
+            SysRoleUser sysRoleUser = new SysRoleUser();
+            sysRoleUser.setUserId(userDto.getId().intValue());
+            sysRoleUser.setRoleId(roleId);
+            if(roleUserDao.getSysRoleUserByUserId(userDto.getId().intValue()) != null){
+                roleUserDao.updateSysRoleUser(sysRoleUser);
+            }else{
+                roleUserDao.save(sysRoleUser);
+            }
+            return Results.success();
+        }else{
+            return Results.failure();
+        }
+    }
+
 
 }

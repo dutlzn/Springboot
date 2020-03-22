@@ -1,6 +1,7 @@
 package sys.demo.dao;
 
 import org.apache.ibatis.annotations.*;
+import sys.demo.dto.UserDto;
 import sys.demo.model.SysUser;
 
 import java.util.List;
@@ -28,4 +29,6 @@ public interface UserDao {
 
     @Select("select * from sys_user t where t.id = #{id}")
     SysUser getUserById(Long id);
+
+    void updateUser(UserDto userDto);
 }

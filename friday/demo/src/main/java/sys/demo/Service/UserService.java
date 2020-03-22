@@ -16,4 +16,6 @@ public interface UserService {
     SysUser getUserByName(String username);
 
     Object getUserById(Long id);
+
+    Results<SysUser> updateUser(UserDto userDto, Integer roleId);
 }
