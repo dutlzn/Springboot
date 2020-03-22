@@ -18,20 +18,46 @@
             <i class="layui-icon layui-icon-refresh" style="line-height:30px"></i></a>
         </div>
 
-        <script type="text/html" id="toolbarDemo">
-            <div class="layui-btn-container">
-                <button class="layui-btn layui-btn-sm" lay-event="getCheckData">获取选中行数据</button>
-                <button class="layui-btn layui-btn-sm" lay-event="getCheckLength">获取选中数目</button>
-                <button class="layui-btn layui-btn-sm" lay-event="isAll">验证是否全选</button>
+        <div class="layui-fluid">
+            <div class="layui-row  layui-col-space15">
+                <div class="layui-col-md12">
+                    <div class="layui-card">
+                        <div class="layui-card-body ">
+                            <form class="layui-form  layui-col-space5">
+                                <div class="layui-inline layui-show-xs-block">
+                                    <input type="text" name="start"  id="start" placeholder="开始日" autocomplete="off" class="layui-input">
+                                </div>
+                                <div class="layui-inline layui-show-xs-block">
+                                    <input type="text" name="end"  id="end" placeholder="截止日" autocomplete="off" class="layui-input">
+                                </div>
+                                <div class="layui-inline layui-show-xs-block">
+                                    <input type="text" name="username"  id="username" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+                                </div>
+                                <div class="layui-inline layui-show-xs-block">
+                                    <button class="layui-btn"  lay-submit="" lay-filter="search"><i class="layui-icon">&#xe615;</i></button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="layui-card-header">
+                            <button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button>
+                            <button class="layui-btn" onclick="xadmin.open('添加用户','/user/add')"><i class="layui-icon"></i>添加</button>
+                        </div>
+
+                        <div class="layui-card-body ">
+                            <table class="layui-hide" id="table" lay-filter="member"></table>
+                        </div>
+
+                        <div class="layui-card-body ">
+                            <script type="text/html" id="barDemo">
+                                <a class="layui-btn layui-btn-xs" lay-event="edit" >编辑</a>
+                                <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del" >删除</a>
+                            </script>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </script>
-        <table class="layui-hide" id="demo" lay-filter="member"></table>
-
-        <script type="text/html" id="barDemo">
-            <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
-            <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
-        </script>
-
+        </div>
 
     </body>
 <script>
@@ -40,12 +66,13 @@
 
         //第一个实例
         table.render({
-            elem: '#demo'
+            elem: '#table'
             // ,height: 312
             ,url: '/user/list' //数据接口
-            ,toolbar: '#toolbarDemo' //开启头部工具栏，并为其绑定左侧模板
+            // ,toolbar: '#toolbarDemo' //开启头部工具栏，并为其绑定左侧模板
             ,page: true //开启分页
             ,response: {
+                countName: 'count', //规定数据总数的字段名称，默认：count
                 dataName: 'datas' //规定数据列表的字段名称，默认：data
             }
             ,cols: [
