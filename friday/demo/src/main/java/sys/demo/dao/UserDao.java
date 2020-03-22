@@ -31,4 +31,7 @@ public interface UserDao {
     SysUser getUserById(Long id);
 
     void updateUser(UserDto userDto);
+
+    @Delete("delete from sys_user where id = #{userId}")
+    int deleteUser(int userId);
 }

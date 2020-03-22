@@ -1,5 +1,6 @@
 package sys.demo.dao;
 
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -15,4 +16,7 @@ public interface RoleUserDao {
     SysRoleUser getSysRoleUserByUserId(Integer userId);
 
     void updateSysRoleUser(SysRoleUser sysRoleUser);
+
+    @Delete("delete from sys_role_user where userId = #{userId}")
+    int deleteRoleUserByUserId(int userId);
 }

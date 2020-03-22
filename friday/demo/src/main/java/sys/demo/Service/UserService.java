@@ -18,4 +18,6 @@ public interface UserService {
     Object getUserById(Long id);
 
     Results<SysUser> updateUser(UserDto userDto, Integer roleId);
+
+    int deleteUser(Long id);
 }
