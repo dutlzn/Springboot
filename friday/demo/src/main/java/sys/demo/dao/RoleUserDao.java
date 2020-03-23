@@ -6,17 +6,21 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import sys.demo.model.SysRoleUser;
 
+import java.util.List;
+
 @Mapper
 public interface RoleUserDao {
-
     @Insert("insert into sys_role_user(userId, roleId) values(#{userId}, #{roleId})")
-    void save(SysRoleUser sysRoleUser);
+    int save(SysRoleUser sysRoleUser);
 
     @Select("select * from sys_role_user t where t.userId = #{userId}")
     SysRoleUser getSysRoleUserByUserId(Integer userId);
 
-    void updateSysRoleUser(SysRoleUser sysRoleUser);
+    int updateSysRoleUser(SysRoleUser sysRoleUser);
 
     @Delete("delete from sys_role_user where userId = #{userId}")
-    int deleteRoleUserByUserId(int userId);
+    int deleteRoleUserByUserId(Integer userId);
+
+    @Select("select * from sys_role_user t where t.roleId = #{roleId}")
+    List<SysRoleUser> listAllSysRoleUserByRoleId(Integer roleId);
 }

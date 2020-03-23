@@ -9,16 +9,15 @@ import sys.demo.Service.RoleUserService;
 import sys.demo.base.result.Results;
 
 @RestController
-@RequestMapping("roleuser")
+@RequestMapping("/roleuser")
 @Slf4j
-public  class RoleUserController {
-
+public class RoleUserController {
     @Autowired
     private RoleUserService roleUserService;
 
     @PostMapping("/getRoleUserByUserId")
     public Results getRoleUserByUserId(Integer userId) {
-        log.info("RoleUserController.getRoleUserByUserId: param = " + userId);
+        log.info("getRoleUserByUserId（"+userId+"）");
         return roleUserService.getSysRoleUserByUserId(userId);
     }
 }

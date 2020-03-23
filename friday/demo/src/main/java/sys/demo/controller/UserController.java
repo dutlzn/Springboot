@@ -23,119 +23,102 @@ import java.util.Date;
 
 //import javax.xml.transform.Result;
 
+
 @Controller
 @RequestMapping("user")
 @Slf4j
-public class UserController
-{
+public class UserController {
+
     @Autowired
     private UserService userService;
 
-    /**
-     * 返回具体用户数据
-     * @param username
-     * @return
-     */
     @GetMapping("/{username}")
-    @ResponseBody //返回的是json格式的数据
+    @ResponseBody
     public SysUser user(@PathVariable String username) {
         log.info("UserController.user(): param ( username = " + username +" )");
         return userService.getUser(username);
     }
 
-    /**
-     * 返回用户列表数据
-     * @return
-     */
     @GetMapping("/list")
-    @ResponseBody //返回的是json格式的数据
+    @ResponseBody
     public Results<SysUser> getUsers(PageTableRequest request) {
-        log.info("UserController.getUsers(): param ( request1 = " + request +" )");
         request.countOffset();
-        return userService.getAllUsersByPage(request.getOffset(), request.getLimit());
+        return userService.getAllUsersByPage(request.getOffset(),request.getLimit());
     }
 
-    /**
-     * 新增用户
-     */
-    @GetMapping("/add")
+    @GetMapping(value = "/add")
     public String addUser(Model model) {
-        SysUser sysUser = new SysUser();
-        sysUser.setUsername("lzn");
-        model.addAttribute(sysUser);
+        model.addAttribute("sysUser",new SysUser());
         return "user/user-add";
     }
 
-    @PostMapping("/add")
+    @PostMapping(value = "/add")
     @ResponseBody
     public Results<SysUser> saveUser(UserDto userDto, Integer roleId) {
-        SysUser sysUser = null ;
-//        手机唯一
+        SysUser sysUser = null;
+        sysUser = userService.getUser(userDto.getUsername());
+        if(sysUser != null && !(sysUser.getId().equals(userDto.getId()))){
+            return Results.failure(ResponseCode.USERNAME_REPEAT.getCode(),ResponseCode.USERNAME_REPEAT.getMessage());
+        }
         sysUser = userService.getUserByPhone(userDto.getTelephone());
         if(sysUser != null && !(sysUser.getId().equals(userDto.getId()))){
-            return Results.failure(ResponseCode.PHONE_REPEAT.getCode(), ResponseCode.PHONE_REPEAT.getMessage());
+            return Results.failure(ResponseCode.PHONE_REPEAT.getCode(),ResponseCode.PHONE_REPEAT.getMessage());
         }
-        //用户名 唯一
-        sysUser = userService.getUserByName(userDto.getUsername());
+        sysUser = userService.getUserByEmail(userDto.getEmail());
         if(sysUser != null && !(sysUser.getId().equals(userDto.getId()))){
-            return Results.failure(ResponseCode.USERNAME_REPEAT.getCode(), ResponseCode.USERNAME_REPEAT.getMessage());
+            return Results.failure(ResponseCode.EMAIL_REPEAT.getCode(),ResponseCode.EMAIL_REPEAT.getMessage());
         }
-
 
         userDto.setStatus(1);
         userDto.setPassword(MD5.crypt(userDto.getPassword()));
-        return userService.save(userDto, roleId);
+        return userService.save(userDto,roleId);
     }
 
     String pattern = "yyyy-MM-dd";
-    @InitBinder //表单到方法的数据绑定
-    public void initBinder(WebDataBinder binder, WebRequest request){
-        // 自定义转换器
-        binder.registerCustomEditor(Date.class, new CustomDateEditor(new SimpleDateFormat(pattern),true));
+
+    //只需要加上下面这段即可，注意不能忘记注解
+    @InitBinder
+    public void initBinder(WebDataBinder binder, WebRequest request) {
+        binder.registerCustomEditor(Date.class, new CustomDateEditor(new SimpleDateFormat(pattern), true));// CustomDateEditor为自定义日期编辑器
     }
 
-    @GetMapping("/edit")
-    public String addUser(Model model, SysUser sysUser) {
-        model.addAttribute(userService.getUserById(sysUser.getId()));
+    @GetMapping(value = "/edit")
+    public String editUser(Model model, SysUser user) {
+        model.addAttribute("sysUser",userService.getUserById(user.getId()));
         return "user/user-edit";
     }
 
-    @PostMapping("/edit")
+    @PostMapping(value = "/edit")
     @ResponseBody
-    public Results<SysUser> updateUser(UserDto userDto, Integer roleId) {
-        SysUser sysUser = null ;
-
+    public Results<SysUser> updateUser( UserDto userDto,Integer roleId) {
+        SysUser sysUser = null;
+        sysUser = userService.getUser(userDto.getUsername());
+        if(sysUser != null && !(sysUser.getId().equals(userDto.getId()))){
+            return Results.failure(ResponseCode.USERNAME_REPEAT.getCode(),ResponseCode.USERNAME_REPEAT.getMessage());
+        }
         sysUser = userService.getUserByPhone(userDto.getTelephone());
         if(sysUser != null && !(sysUser.getId().equals(userDto.getId()))){
-            return Results.failure(ResponseCode.PHONE_REPEAT.getCode(), ResponseCode.PHONE_REPEAT.getMessage());
+            return Results.failure(ResponseCode.PHONE_REPEAT.getCode(),ResponseCode.PHONE_REPEAT.getMessage());
         }
-
-        //用户名 唯一
-        sysUser = userService.getUserByName(userDto.getUsername());
+        sysUser = userService.getUserByEmail(userDto.getEmail());
         if(sysUser != null && !(sysUser.getId().equals(userDto.getId()))){
-            return Results.failure(ResponseCode.USERNAME_REPEAT.getCode(), ResponseCode.USERNAME_REPEAT.getMessage());
+            return Results.failure(ResponseCode.EMAIL_REPEAT.getCode(),ResponseCode.EMAIL_REPEAT.getMessage());
         }
-
-        return userService.updateUser(userDto, roleId);
+        return userService.updateUser(userDto,roleId);
     }
 
-    @GetMapping("/delete")
+    @GetMapping(value = "/delete")
     @ResponseBody
-    public Results deleteUser(UserDto userDto) {
-        int count = userService.deleteUser(userDto.getId());
-        if(count > 0){
-            return Results.success();
-        }else{
-            return Results.failure();
-        }
+    public Results<SysUser> deleteUser( UserDto userDto) {
+        userService.deleteUser(userDto.getId());
+        return Results.success();
     }
 
-    @GetMapping("/findUserByFuzzyUsername")
+    @GetMapping("/findUserByFuzzyUserName")
     @ResponseBody
-    public Results<SysUser> findUserByFuzzyUsername(PageTableRequest request, String username) {
-        log.info("UserController.findUserByFuzzyUsername(): param ( request1 = " + request +" ,username = " + username+ ")");
-        request.countOffset();
-        return userService.getUserByFuzzyUsername(username, request.getOffset(), request.getLimit());
+    public Results<SysUser> getUserByFuzzyUserName(PageTableRequest requests, String username) {
+        requests.countOffset();
+        return userService.getUserByFuzzyUserNamePage(username,requests.getOffset(),requests.getLimit());
     }
 
 

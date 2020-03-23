@@ -14,7 +14,6 @@ public class RoleUserServiceImpl implements RoleUserService {
     @Autowired
     private RoleUserDao roleUserDao;
 
-
     @Override
     public Results getSysRoleUserByUserId(Integer userId) {
         SysRoleUser sysRoleUser = roleUserDao.getSysRoleUserByUserId(userId);
