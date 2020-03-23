@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import sys.demo.Service.RoleService;
+import sys.demo.base.result.PageTableRequest;
 import sys.demo.base.result.Results;
 import sys.demo.model.SysRole;
 
@@ -16,10 +17,28 @@ import sys.demo.model.SysRole;
 public class RoleController {
     @Autowired
     private RoleService roleService;
+
     @GetMapping("all")
     @ResponseBody
     public Results<SysRole> getAll() {
         log.info("RoleController.getAll()");
         return roleService.getAllRoles();
     }
+
+    @GetMapping("/list")
+    @ResponseBody
+    public Results list(PageTableRequest request) {
+        log.info("RoleController.list(): param ( request = " + request +" )");
+        request.countOffset();
+        return roleService.getAllRolesByPage(request.getOffset(), request.getLimit());
+    }
+
+
+    @GetMapping("/findRoleByFuzzyRoleName")
+    @ResponseBody
+    public Results findRoleByFuzzyRoleName(PageTableRequest requests, String roleName) {
+        requests.countOffset();
+        return roleService.getRoleByFuzzyRoleNamePage(roleName,requests.getOffset(),requests.getLimit());
+    }
+
 }
