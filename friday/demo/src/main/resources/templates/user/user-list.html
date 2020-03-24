@@ -110,6 +110,7 @@
 
         //监听提交
         form.on('submit(search)', function(data){
+            console.log("搜索");
             var username = data.field.username;
             table.render({
                 elem: '#table'

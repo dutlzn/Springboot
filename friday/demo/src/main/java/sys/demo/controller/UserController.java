@@ -111,9 +111,14 @@ public class UserController {
         return Results.success();
     }
 
-    @GetMapping("/findUserByFuzzyUserName")
+    @GetMapping("/findUserByFuzzyUsername")
     @ResponseBody
-    public Results<SysUser> getUserByFuzzyUserName(PageTableRequest requests, String username) {
+    public Results getUserByFuzzyUserName(PageTableRequest requests, String username) {
+        System.out.println("Jinlail ");
+        System.err.println(username);
+        System.err.println(requests.getLimit());
+        System.err.println(requests.getOffset());
+
         requests.countOffset();
         return userService.getUserByFuzzyUserNamePage(username,requests.getOffset(),requests.getLimit());
     }
