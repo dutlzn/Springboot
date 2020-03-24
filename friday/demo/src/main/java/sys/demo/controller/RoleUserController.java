@@ -17,6 +17,7 @@ public class RoleUserController {
 
     @PostMapping("/getRoleUserByUserId")
     public Results getRoleUserByUserId(Integer userId) {
+        System.err.println(userId);
         log.info("getRoleUserByUserId（"+userId+"）");
         return roleUserService.getSysRoleUserByUserId(userId);
     }

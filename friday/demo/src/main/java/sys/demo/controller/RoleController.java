@@ -37,7 +37,7 @@ public class RoleController {
     public Results list(PageTableRequest request) {
         log.info("RoleController.list(): param ( request = " + request +" )");
         request.countOffset();
-        return roleService.getAllRolesByPage(request.getOffset(), request.getLimit());
+        return roleService.getAllRolesByPage(request.getOffset(),request.getLimit());
     }
 
     @GetMapping(value = "/add")

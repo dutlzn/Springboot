@@ -1,6 +1,5 @@
 package sys.demo.controller;
 
-import lombok.experimental.PackagePrivate;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
@@ -18,10 +17,8 @@ import sys.demo.model.SysUser;
 import sys.demo.util.MD5;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 
-//import javax.xml.transform.Result;
 
 
 @Controller

@@ -1,12 +1,14 @@
 package sys.demo.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 import java.util.Date;
 
 @Data
+//@Builder
 @EqualsAndHashCode(callSuper = true) //可以完美匹配父类
 public class SysUser extends BaseEntity<Long> {
     private static final long serialVersionUID = -6525908145032868837L;

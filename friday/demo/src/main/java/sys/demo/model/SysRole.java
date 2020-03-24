@@ -1,9 +1,11 @@
 package sys.demo.model;
 
+import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 @Data
+//@Builder
 @EqualsAndHashCode(callSuper = true)
 public class SysRole extends BaseEntity<Integer> {
 
