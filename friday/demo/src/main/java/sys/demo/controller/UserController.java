@@ -1,5 +1,6 @@
 package sys.demo.controller;
 
+
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
@@ -18,8 +19,6 @@ import sys.demo.util.MD5;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
-
 
 @Controller
 @RequestMapping("user")
@@ -55,7 +54,7 @@ public class UserController {
         SysUser sysUser = null;
         sysUser = userService.getUser(userDto.getUsername());
         if(sysUser != null && !(sysUser.getId().equals(userDto.getId()))){
-            return Results.failure(ResponseCode.USERNAME_REPEAT.getCode(),ResponseCode.USERNAME_REPEAT.getMessage());
+            return Results.failure(ResponseCode.USERNAME_REPEAT.getCode(), ResponseCode.USERNAME_REPEAT.getMessage());
         }
         sysUser = userService.getUserByPhone(userDto.getTelephone());
         if(sysUser != null && !(sysUser.getId().equals(userDto.getId()))){

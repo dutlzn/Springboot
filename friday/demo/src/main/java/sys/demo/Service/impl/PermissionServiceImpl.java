@@ -23,7 +23,7 @@ public class PermissionServiceImpl implements PermissionService {
 
     @Override
     public Results<JSONArray> listAllPermission() {
-        log.info(getClass().getName() + ".listAllPermission()");
+//        log.info(getClass().getName() + ".listAllPermission()");
         List datas = permissionDao.findAll();
         JSONArray array = new JSONArray();
         log.info(getClass().getName() + ".setPermissionsTree(?,?,?)");
@@ -36,4 +36,33 @@ public class PermissionServiceImpl implements PermissionService {
         List<SysPermission> datas = permissionDao.listByRoleId(roleId);
         return Results.success(0, datas);
     }
+
+
+    @Override
+    public Results<SysPermission> getMenuAll() {
+        return Results.success(0, permissionDao.findAll());
+    }
+
+    @Override
+    public Results save(SysPermission sysPermission) {
+        return (permissionDao.save(sysPermission) > 0) ? Results.success() : Results.failure();
+    }
+
+    @Override
+    public SysPermission getSysPermissionById(Integer id) {
+        return permissionDao.getSysPermissionById(id);
+    }
+
+    @Override
+    public Results updateSysPermission(SysPermission sysPermission) {
+        return (permissionDao.update(sysPermission) > 0) ? Results.success() : Results.failure();
+    }
+
+    @Override
+    public Results delete(Integer id) {
+        permissionDao.deleteById(id);
+        permissionDao.deleteByParentId(id);
+        return Results.success();
+    }
+
 }

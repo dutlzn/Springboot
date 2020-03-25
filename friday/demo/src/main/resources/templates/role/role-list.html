@@ -71,6 +71,7 @@
             elem: '#table'
             ,url: '/role/list' //数据接口
             ,page: true //开启分页
+            ,limits: [5,10,20,30,40,50,60,70,80,90]
             ,response: {
                 countName: 'count', //规定数据总数的字段名称，默认：count
                 dataName: 'datas' //规定数据列表的字段名称，默认：data
@@ -113,7 +114,7 @@
                     });
                 });
             } else if(obj.event === 'edit'){
-                xadmin.open('编辑用户信息','/role/edit/?id='+data.id);
+                xadmin.open('编辑用户信息', '/role/edit/?id=' + data.id);
             }
         })
 

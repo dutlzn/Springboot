@@ -1,0 +1,9 @@
+INSERT INTO `sys_permission` VALUES ('26', '0', 'test1', null, null, '2', 'sys:user:edit', '100');
+INSERT INTO `sys_permission` VALUES ('27', '26', 'test2', null, null, '2', 'sys:user:edit', '100');
+INSERT INTO `sys_permission` VALUES ('28', '27', 'test3', null, null, '2', 'sys:user:edit', '100');
+INSERT INTO `sys_permission` VALUES ('29', '28', 'test4', null, null, '2', 'sys:user:edit', '100');
+INSERT INTO `sys_permission` VALUES ('30', '29', 'test5', null, null, '2', 'sys:user:edit', '100');
+INSERT INTO `sys_permission` VALUES ('31', '30', 'test6', null, null, '2', 'sys:user:edit', '100');
+INSERT INTO `sys_permission` VALUES ('32', '31', 'test7', null, null, '2', 'sys:user:edit', '100');
+INSERT INTO `sys_permission` VALUES ('33', '32', 'test8', null, null, '2', 'sys:user:edit', '100');
+INSERT INTO `sys_permission` VALUES ('34', '33', 'test9', null, null, '2', 'sys:user:edit', '100');

@@ -19,13 +19,13 @@
             <dl class="layui-nav-child">
                 <!-- 二级菜单 -->
                 <dd>
-                    <a onclick="xadmin.open('最大化','http://www.baidu.com','','',true)">
+                    <a onclick="xadmin.open('最大化','http://www.baidu.com')">
                         <i class="iconfont">&#xe6a2;</i>弹出最大化</a></dd>
                 <dd>
                     <a onclick="xadmin.open('弹出自动宽高','http://www.baidu.com')">
                         <i class="iconfont">&#xe6a8;</i>弹出自动宽高</a></dd>
                 <dd>
-                    <a onclick="xadmin.open('弹出指定宽高','http://www.baidu.com',500,300)">
+                    <a onclick="xadmin.open('弹出指定宽高','http://www.baidu.com')">
                         <i class="iconfont">&#xe6a8;</i>弹出指定宽高</a></dd>
                 <dd>
                     <a onclick="xadmin.add_tab('在tab打开','member-list.html')">
@@ -66,14 +66,14 @@
                     <i class="iconfont nav_right">&#xe697;</i></a>
                 <ul class="sub-menu">
                     <li>
-                        <a onclick="xadmin.add_tab('角色列表','/api/getPage?pageName=role/role-list')">
+                        <a onclick="xadmin.add_tab('角色管理','/api/getPage?pageName=role/role-list')">
                             <i class="iconfont">&#xe6a7;</i>
-                            <cite>角色列表</cite></a>
+                            <cite>角色管理</cite></a>
                     </li>
                     <li>
-                        <a onclick="xadmin.add_tab('会员列表(静态表格)','member-list.html')">
+                        <a onclick="xadmin.add_tab('菜单管理','/api/getPage?pageName=permission/permission-list')">
                             <i class="iconfont">&#xe6a7;</i>
-                            <cite>会员列表(静态表格)</cite></a>
+                            <cite>菜单管理</cite></a>
                     </li>
                     <li>
                         <a onclick="xadmin.add_tab('会员列表(动态表格)','member-list1.html',true)">

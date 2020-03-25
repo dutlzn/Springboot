@@ -16,6 +16,7 @@ public interface RoleDao {
     Long countAllRoles();
 
     @Select("select * from sys_role t limit #{startPosition}, #{limit}")
+//    List<SysRole> getAllRolesByPage(Integer startPosition, Integer limit);
     List<SysRole> getAllRolesByPage(@Param("startPosition")Integer startPosition, @Param("limit")Integer limit);
 
     @Options(useGeneratedKeys = true, keyProperty = "id")

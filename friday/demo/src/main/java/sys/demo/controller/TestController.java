@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("")
 public class TestController {
-    @GetMapping("testIndex")
+    @GetMapping("vvv")
     /*
     ?name= 是直接可以解析的
      */
