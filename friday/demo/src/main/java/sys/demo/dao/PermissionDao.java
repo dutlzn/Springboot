@@ -32,4 +32,6 @@ public interface PermissionDao {
 
     @Select("SELECT DISTINCT t.parentId FROM sys_permission t")
     List<Integer> findAllPid();
+
+    List<SysPermission> listByUserId(Long id);
 }
