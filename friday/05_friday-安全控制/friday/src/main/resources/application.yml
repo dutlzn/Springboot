@@ -26,7 +26,9 @@ spring:
     testOnReturn: false
     poolPreparedStatements: true
     maxPoolPreparedStatementPerConnectionSize: 20
-
+  security:
+    basic:
+      enabled=false: false
 mybatis:
   type-aliases-package: com.sxbang.friday.model
   mapper-locations: classpath:/mybatis-mappers/*

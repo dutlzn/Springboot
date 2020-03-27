@@ -81,11 +81,14 @@
                         {field: 'sort',width:60, title: '排序'},
                         {field:'permission',title:'资源标识'},
                         {field:'type',width:60,title:'类型',templet:function(d){
-                            return  d.type == '1' ? "菜单":"按钮";
-                        }},
+                                return  d.type == '1' ? "菜单":"按钮";
+                            }},
                         {title:'操作',toolbar:'#barDemo'}
                     ]
-                ]
+                ],
+                done:function(){
+                    checkPermission();
+                }
             });
         };
         renderTable();
@@ -128,7 +131,7 @@
                 xadmin.open('编辑用户信息', '/permission/edit/?id=' + data.id);
             }
         })
-
+        checkPermission()
     });
 </script>
 </body>

@@ -7,6 +7,7 @@ import com.lzn.friday.model.SysPermission;
 import com.lzn.friday.service.PermissionService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -23,6 +24,7 @@ public class PermissionController {
 
     @RequestMapping(value = "/listAllPermission", method = RequestMethod.GET)
     @ResponseBody
+    @PreAuthorize("hasAuthority('sys:menu:query')")
     public Results<JSONArray> listAllPermission() {
         return permissionService.listAllPermission();
     }
@@ -36,6 +38,7 @@ public class PermissionController {
 
     @GetMapping("/menuAll")
     @ResponseBody
+    @PreAuthorize("hasAuthority('sys:menu:query')")
     public Results getMenuAll(){
         return permissionService.getMenuAll();
     }
@@ -47,6 +50,7 @@ public class PermissionController {
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
+    @PreAuthorize("hasAuthority('sys:menu:add')")
     @ResponseBody
     public Results<SysPermission> savePermission(@RequestBody SysPermission permission) {
         return permissionService.save(permission);
@@ -60,12 +64,14 @@ public class PermissionController {
 
     @RequestMapping(value = "/edit", method = RequestMethod.POST)
     @ResponseBody
+    @PreAuthorize("hasAuthority('sys:menu:edit')")
     public Results updatePermission(@RequestBody  SysPermission permission) {
         return permissionService.updateSysPermission(permission);
     }
 
     @RequestMapping(value = "/delete", method = RequestMethod.GET)
     @ResponseBody
+    @PreAuthorize("hasAuthority('sys:menu:del')")
     public Results deletePermission(SysPermission sysPermission) {
         return permissionService.delete(sysPermission.getId());
     }
