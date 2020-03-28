@@ -141,10 +141,13 @@ public class UserController {
 		return userService.getUserByFuzzyUserNamePage(username,requests.getOffset(),requests.getLimit());
 	}
 
-//	@PostMapping("/changePassword")
-//	@ApiOperation(value = "修改密码")
-//	@ResponseBody
-//	public Results<SysUser> changePassword(String username, String oldPassword, String newPassword) {
-//		return userService.changePassword(username, oldPassword, newPassword);
-//	}
+	@PostMapping("/changePassword")
+	@ApiOperation(value = "修改密码")
+	@ResponseBody
+	public Results<SysUser> changePassword(String username, String oldPassword, String newPassword) {
+		System.out.println(username);
+		System.out.println(oldPassword);
+		System.out.println(newPassword);
+		return userService.changePassword(username, oldPassword, newPassword);
+	}
 }

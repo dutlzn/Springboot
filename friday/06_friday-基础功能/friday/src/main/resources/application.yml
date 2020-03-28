@@ -42,3 +42,11 @@ mybatis:
 
 #baseInfo
 api-url: /api
+
+logging:
+  level:
+    io:
+      swagger:
+        models:
+          parameters:
+            AbstractSerializableParameter: ERROR
