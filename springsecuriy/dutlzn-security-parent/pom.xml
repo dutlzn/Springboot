@@ -6,6 +6,7 @@
 
     <groupId>com.dutlzn</groupId>
     <artifactId>dutlzn-security-parent</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
 
 
@@ -89,6 +90,7 @@
 
     <!--聚合管理-->
     <modules>
+        <module>dutlzn-security-base</module>
     </modules>
 
     <build>
