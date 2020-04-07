@@ -91,6 +91,8 @@
     <!--聚合管理-->
     <modules>
         <module>dutlzn-security-base</module>
+        <module>dutlzn-security-core</module>
+        <module>dutlzn-security-web</module>
     </modules>
 
     <build>

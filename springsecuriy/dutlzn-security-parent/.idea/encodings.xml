@@ -3,5 +3,7 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/dutlzn-security-base" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/dutlzn-security-core" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/dutlzn-security-web" charset="UTF-8" />
   </component>
 </project>
