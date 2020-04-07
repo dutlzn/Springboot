@@ -1,0 +1,17 @@
+{
+  "groups": [
+    {
+      "name": "dutlzn.security",
+      "type": "com.dutlzn.properties.SecurityProperties",
+      "sourceType": "com.dutlzn.properties.SecurityProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "dutlzn.security.authentication",
+      "type": "com.dutlzn.properties.AuthenticationProperties",
+      "sourceType": "com.dutlzn.properties.SecurityProperties"
+    }
+  ],
+  "hints": []
+}

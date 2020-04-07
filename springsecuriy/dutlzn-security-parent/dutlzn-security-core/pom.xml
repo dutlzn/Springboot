@@ -18,7 +18,15 @@
             <version>${dutlzn-security.version}</version>
         </dependency>
 
-<!--        spring security 启动器-->
+        <!-- application.yml 配置处理器-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+
+        <!--        spring security 启动器-->
        <dependency>
            <groupId>org.springframework.boot</groupId>
            <artifactId>spring-boot-starter-security</artifactId>
