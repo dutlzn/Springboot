@@ -64,7 +64,8 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                 .failureHandler(customAuthenticationFailureHandler)
                 .and()
                 .authorizeRequests()
-                .antMatchers(securityProperties.getAuthentication().getLoginPage()).permitAll()
+                .antMatchers(securityProperties.getAuthentication().getLoginPage()
+                ).permitAll()
                 .anyRequest().authenticated()
                 ;
     }
