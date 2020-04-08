@@ -12,15 +12,20 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.crypto.scrypt.SCryptPasswordEncoder;
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
 
 @Configuration
 @EnableWebSecurity
 public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
     Logger logger = LoggerFactory.getLogger(getClass());
+
+    @Autowired
+    private UserDetailsService customUserDetailsService;
 
 
 
@@ -31,15 +36,18 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-//       数据库存储的密码一定是加密之后的
-        String password = passwordEncoder().encode("1234");
-        logger.info("加密之后存储的密码：" + password);
-        auth.inMemoryAuthentication().withUser("admin")
-                .password(password).authorities("admin");
+////       数据库存储的密码一定是加密之后的
+//        String password = passwordEncoder().encode("1234");
+//        logger.info("加密之后存储的密码：" + password);
+//        auth.inMemoryAuthentication().withUser("admin")
+//                .password(password).authorities("admin");
+        auth.userDetailsService(customUserDetailsService);
     }
 
     @Autowired
     private SecurityProperties securityProperties;
+    @Autowired
+    private AuthenticationSuccessHandler customAuthenticationSuccessHandler;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -49,6 +57,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                 .loginProcessingUrl(securityProperties.getAuthentication().getLoginProcessingUrl())
                 .usernameParameter(securityProperties.getAuthentication().getUsernameParameter())
                 .passwordParameter(securityProperties.getAuthentication().getPasswordParameter())
+                .successHandler(customAuthenticationSuccessHandler)
                 .and()
                 .authorizeRequests()
                 .antMatchers(securityProperties.getAuthentication().getLoginPage()).permitAll()
