@@ -12,6 +12,7 @@ dutlzn:
         - /dist/**
         - /modules/**
         - /plugins/**
+      loginType: REDIRECT
 
 spring:
   thymeleaf:

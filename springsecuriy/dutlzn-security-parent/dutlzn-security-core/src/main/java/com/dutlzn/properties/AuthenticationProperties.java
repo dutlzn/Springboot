@@ -1,5 +1,8 @@
 package com.dutlzn.properties;
 
+import lombok.Data;
+
+
 public class AuthenticationProperties {
     private String loginPage =  "/login/page";
     private String loginProcessingUrl= "/login/form";
@@ -9,6 +12,15 @@ public class AuthenticationProperties {
             "/dist/**", "/modules/**","/plugins/**"
     };
 
+    private LoginResponseType loginType = LoginResponseType.REDIRECT;
+
+    public LoginResponseType getLoginType() {
+        return loginType;
+    }
+
+    public void setLoginType(LoginResponseType loginType) {
+        this.loginType = loginType;
+    }
 
     public String getLoginPage() {
         return loginPage;
