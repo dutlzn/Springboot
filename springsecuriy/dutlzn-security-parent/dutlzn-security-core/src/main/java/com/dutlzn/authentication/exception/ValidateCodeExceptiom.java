@@ -1,4 +1,4 @@
-package com.dutlzn.authentication.code;
+package com.dutlzn.authentication.exception;
 
 
 import org.springframework.security.core.AuthenticationException;

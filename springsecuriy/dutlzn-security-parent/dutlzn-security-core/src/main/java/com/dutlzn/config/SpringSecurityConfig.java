@@ -20,6 +20,9 @@ import org.springframework.security.crypto.scrypt.SCryptPasswordEncoder;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl;
+
+import javax.sql.DataSource;
 
 
 @Configuration
@@ -43,6 +46,23 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
     public PasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();
     }
+
+    /**
+     * 记住我
+     */
+    @Autowired
+    DataSource dataSource;
+    @Bean
+    public JdbcTokenRepositoryImpl jdbcTokenRepository() {
+        JdbcTokenRepositoryImpl jdbcTokenRepository = new JdbcTokenRepositoryImpl();
+        jdbcTokenRepository.setDataSource(dataSource);
+//        jdbcTokenRepository.setCreateTableOnStartup(true) ;
+        return jdbcTokenRepository;
+    }
+
+
+
+
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -73,7 +93,11 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(securityProperties.getAuthentication().getLoginPage()
                 ,"/code/image").permitAll()
                 .anyRequest().authenticated()
-                ;
+                .and()
+        .rememberMe()
+        .tokenRepository(jdbcTokenRepository())
+        .tokenValiditySeconds(60*60*24*7)
+        ;
     }
 
     @Override
