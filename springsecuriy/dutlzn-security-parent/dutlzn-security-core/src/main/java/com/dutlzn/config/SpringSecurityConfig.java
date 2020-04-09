@@ -1,5 +1,6 @@
 package com.dutlzn.config;
 
+import com.dutlzn.authentication.code.ImageCodeValidateFilter;
 import com.dutlzn.properties.SecurityProperties;
 import org.slf4j.ILoggerFactory;
 import org.slf4j.Logger;
@@ -18,6 +19,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.crypto.scrypt.SCryptPasswordEncoder;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 
 @Configuration
@@ -27,7 +29,14 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private UserDetailsService customUserDetailsService;
-
+    @Autowired
+    private SecurityProperties securityProperties;
+    @Autowired
+    private AuthenticationSuccessHandler customAuthenticationSuccessHandler;
+    @Autowired
+    private AuthenticationFailureHandler customAuthenticationFailureHandler;
+    @Autowired
+    ImageCodeValidateFilter imageCodeValidateFilter;
 
 
     @Bean
@@ -45,17 +54,14 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
         auth.userDetailsService(customUserDetailsService);
     }
 
-    @Autowired
-    private SecurityProperties securityProperties;
-    @Autowired
-    private AuthenticationSuccessHandler customAuthenticationSuccessHandler;
-    @Autowired
-    private AuthenticationFailureHandler customAuthenticationFailureHandler;
+
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 //        http.httpBasic()
-        http.formLogin()
+        http.addFilterBefore(imageCodeValidateFilter,
+                UsernamePasswordAuthenticationFilter.class)
+                .formLogin()
                 .loginPage(securityProperties.getAuthentication().getLoginPage())
                 .loginProcessingUrl(securityProperties.getAuthentication().getLoginProcessingUrl())
                 .usernameParameter(securityProperties.getAuthentication().getUsernameParameter())
@@ -65,7 +71,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .authorizeRequests()
                 .antMatchers(securityProperties.getAuthentication().getLoginPage()
-                ).permitAll()
+                ,"/code/image").permitAll()
                 .anyRequest().authenticated()
                 ;
     }
