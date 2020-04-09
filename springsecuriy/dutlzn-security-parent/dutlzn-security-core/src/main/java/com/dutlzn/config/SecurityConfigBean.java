@@ -3,6 +3,7 @@ package com.dutlzn.config;
 import com.dutlzn.authentication.mobile.SmsCodeSendoer;
 import com.dutlzn.authentication.mobile.SmsSend;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -12,7 +13,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class SecurityConfigBean {
     @Bean
-    @ConditionalOnBean(SmsSend.class)
+    @ConditionalOnMissingBean(SmsSend.class)
     public SmsSend smsSend(){
         return new SmsCodeSendoer();
     }

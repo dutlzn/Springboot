@@ -11,6 +11,6 @@ public class SmsCodeSendoer implements  SmsSend {
                 "你好，验证码%s,请勿传给别人.",msg
         );
         logger.info("向手机号"+mobile+"发送的短信为:"+sendContent);
-        return false;
+        return true;
     }
 }

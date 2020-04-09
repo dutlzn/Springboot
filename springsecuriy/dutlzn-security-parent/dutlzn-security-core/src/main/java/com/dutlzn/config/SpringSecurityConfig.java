@@ -91,7 +91,9 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .authorizeRequests()
                 .antMatchers(securityProperties.getAuthentication().getLoginPage()
-                ,"/code/image").permitAll()
+                ,"/code/image"
+                ,"/mobile/page"
+                ,"/code/mobile").permitAll()
                 .anyRequest().authenticated()
                 .and()
         .rememberMe()
