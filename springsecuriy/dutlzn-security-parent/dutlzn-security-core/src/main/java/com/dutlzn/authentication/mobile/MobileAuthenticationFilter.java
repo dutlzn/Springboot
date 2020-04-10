@@ -17,6 +17,7 @@ import java.io.IOException;
 /**
  * 用于校验用户手机号是否允许通过认证
  */
+
 public class MobileAuthenticationFilter extends AbstractAuthenticationProcessingFilter {
 
     private String mobileParameter = "mobile";

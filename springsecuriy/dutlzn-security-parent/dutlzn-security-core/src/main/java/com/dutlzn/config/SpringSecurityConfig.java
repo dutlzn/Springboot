@@ -1,6 +1,9 @@
 package com.dutlzn.config;
 
 import com.dutlzn.authentication.code.ImageCodeValidateFilter;
+import com.dutlzn.authentication.mobile.MobileAuthenticationConﬁg;
+import com.dutlzn.authentication.mobile.MobileAuthenticationFilter;
+import com.dutlzn.authentication.mobile.MobileValidateFilter;
 import com.dutlzn.properties.SecurityProperties;
 import org.slf4j.ILoggerFactory;
 import org.slf4j.Logger;
@@ -40,6 +43,10 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
     private AuthenticationFailureHandler customAuthenticationFailureHandler;
     @Autowired
     ImageCodeValidateFilter imageCodeValidateFilter;
+    @Autowired
+    MobileValidateFilter mobileValidateFilter;
+    @Autowired
+    MobileAuthenticationConﬁg mobileAuthenticationConﬁg;
 
 
     @Bean
@@ -79,7 +86,8 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 //        http.httpBasic()
-        http.addFilterBefore(imageCodeValidateFilter,
+        http.addFilterBefore(mobileValidateFilter, UsernamePasswordAuthenticationFilter.class)
+                .addFilterBefore(imageCodeValidateFilter,
                 UsernamePasswordAuthenticationFilter.class)
                 .formLogin()
                 .loginPage(securityProperties.getAuthentication().getLoginPage())
@@ -100,6 +108,8 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
         .tokenRepository(jdbcTokenRepository())
         .tokenValiditySeconds(60*60*24*7)
         ;
+
+        http.apply(mobileAuthenticationConﬁg);
     }
 
     @Override
