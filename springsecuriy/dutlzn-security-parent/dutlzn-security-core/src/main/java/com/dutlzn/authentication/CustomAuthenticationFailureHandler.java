@@ -3,6 +3,7 @@ package com.dutlzn.authentication;
 import com.dutlzn.base.result.MyResult;
 import com.dutlzn.properties.LoginResponseType;
 import com.dutlzn.properties.SecurityProperties;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.AuthenticationException;
@@ -31,8 +32,13 @@ public class CustomAuthenticationFailureHandler extends SimpleUrlAuthenticationF
             httpServletResponse.getWriter().write(result.toJsonString());
         }else{
             //重写向回认证页面，注意加上?error
-            super.setDefaultFailureUrl(
-                    securityProperties.getAuthentication().getLoginPage()+"?error");
+//            super.setDefaultFailureUrl(
+//                    securityProperties.getAuthentication().getLoginPage()+"?error");
+            //上一次请求lujing
+            String refer = httpServletRequest.getHeader("Referer");
+            logger.info("referer:"+refer);
+            String lastUrl = StringUtils.substringBefore(refer,"?");
+            super.setDefaultFailureUrl(lastUrl+"?error");
             super.onAuthenticationFailure(httpServletRequest,httpServletResponse,e);
         }
 
