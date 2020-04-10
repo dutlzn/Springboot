@@ -6,6 +6,7 @@ import com.dutlzn.controller.MobileLoginController;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.AuthenticationException;
+import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import javax.servlet.FilterChain;
@@ -17,6 +18,7 @@ import java.io.IOException;
 /**
  * 校验用户输入的手机
  */
+@Component
 public class MobileValidateFilter extends OncePerRequestFilter {
     @Autowired
     CustomAuthenticationFailureHandler customAuthenticationFailureHandler;
