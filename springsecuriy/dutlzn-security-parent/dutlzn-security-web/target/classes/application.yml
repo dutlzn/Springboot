@@ -2,7 +2,7 @@ server:
   port: 80
   servlet:
     session:
-      timeout: 10m
+      timeout: 1m
 
 dutlzn:
   security:
