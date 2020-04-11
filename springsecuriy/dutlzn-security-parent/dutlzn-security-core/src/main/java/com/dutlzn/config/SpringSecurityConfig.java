@@ -25,6 +25,7 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl;
 import org.springframework.security.web.session.InvalidSessionStrategy;
+import org.springframework.security.web.session.SessionInformationExpiredStrategy;
 
 import javax.sql.DataSource;
 
@@ -50,6 +51,8 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
     MobileAuthenticationConﬁg mobileAuthenticationConﬁg;
     @Autowired
     private InvalidSessionStrategy invalidSessionStrategy;
+    @Autowired
+    private SessionInformationExpiredStrategy sessionInformationExpiredStrategy;
 
 
     @Bean
@@ -113,6 +116,8 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
         .and()
         .sessionManagement()
         .invalidSessionStrategy(invalidSessionStrategy)
+        .maximumSessions(1)
+        .expiredSessionStrategy(sessionInformationExpiredStrategy)
         ;
 
         http.apply(mobileAuthenticationConﬁg);
