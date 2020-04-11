@@ -24,6 +24,7 @@ import org.springframework.security.web.authentication.AuthenticationFailureHand
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl;
+import org.springframework.security.web.session.InvalidSessionStrategy;
 
 import javax.sql.DataSource;
 
@@ -47,6 +48,8 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
     MobileValidateFilter mobileValidateFilter;
     @Autowired
     MobileAuthenticationConﬁg mobileAuthenticationConﬁg;
+    @Autowired
+    private InvalidSessionStrategy invalidSessionStrategy;
 
 
     @Bean
@@ -107,6 +110,9 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
         .rememberMe()
         .tokenRepository(jdbcTokenRepository())
         .tokenValiditySeconds(60*60*24*7)
+        .and()
+        .sessionManagement()
+        .invalidSessionStrategy(invalidSessionStrategy)
         ;
 
         http.apply(mobileAuthenticationConﬁg);
