@@ -3,7 +3,8 @@ server:
   servlet:
     session:
       timeout: 1m
-
+      cookie:
+        name: JSESSIONID
 dutlzn:
   security:
     authentication:
@@ -16,7 +17,6 @@ dutlzn:
         - /modules/**
         - /plugins/**
       loginType: REDIRECT
-
 spring:
   thymeleaf:
     cache: false
@@ -26,3 +26,7 @@ spring:
     url: jdbc:mysql://47.98.209.48:3306/study-security?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8
     # mysql8版本以上驱动包指定新驱动类
     driver-class-name: com.mysql.cj.jdbc.Driver
+  session:
+    store-type: redis
+#  redis:
+#    port: 6379
