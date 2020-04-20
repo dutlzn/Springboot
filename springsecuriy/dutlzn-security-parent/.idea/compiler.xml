@@ -16,7 +16,6 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="dutlzn-security-base" options="-parameters" />
       <module name="dutlzn-security-core" options="-parameters" />
-      <module name="dutlzn-security-parent" options="" />
       <module name="dutlzn-security-web" options="-parameters" />
     </option>
   </component>

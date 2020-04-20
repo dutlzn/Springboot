@@ -12,17 +12,16 @@
     <artifactId>dutlzn-security-base</artifactId>
 
     <dependencies>
-        <!--json处理工具 -->
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-        </dependency>
-        <!--注解方式简化setter/getter/constructor等-->
+        <!--类中setter/getter,使用注解-->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
-        <!--真实依赖 工具类-->
+        <!-- 工具类依赖 -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+        </dependency>
         <dependency>
             <groupId>commons-lang</groupId>
             <artifactId>commons-lang</artifactId>
@@ -36,5 +35,4 @@
             <artifactId>commons-io</artifactId>
         </dependency>
     </dependencies>
-
 </project>

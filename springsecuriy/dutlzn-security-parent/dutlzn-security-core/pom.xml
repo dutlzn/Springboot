@@ -10,43 +10,34 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>dutlzn-security-core</artifactId>
+
     <dependencies>
-        <!--依赖mengxuegu-security-base基础模块  -->
+        <!--依赖mengxuegu-security-base基础模块 -->
         <dependency>
             <groupId>com.dutlzn</groupId>
             <artifactId>dutlzn-security-base</artifactId>
             <version>${dutlzn-security.version}</version>
         </dependency>
 
-        <!-- application.yml 配置处理器-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-configuration-processor</artifactId>
-            <optional>true</optional>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+        <!-- spring security 启动器-->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.5</version>
         </dependency>
 
 
-        <!--        spring security 启动器-->
-       <dependency>
-           <groupId>org.springframework.boot</groupId>
-           <artifactId>spring-boot-starter-security</artifactId>
-       </dependency>
-
-       <dependency>
-           <groupId>javax.servlet</groupId>
-           <artifactId>servlet-api</artifactId>
-           <version>2.5</version>
-       </dependency>
-
-
-<!--        图形验证码-->
+        <!--图片验证码-->
         <dependency>
             <groupId>com.github.penggle</groupId>
             <artifactId>kaptcha</artifactId>
         </dependency>
 
-
-<!--   数据库依赖-->
+        <!--数据库依赖-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-jdbc</artifactId>
@@ -56,8 +47,7 @@
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
 
-
-<!--        采用redis来管理session-->
+        <!--采用redis来管理session-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
@@ -68,13 +58,12 @@
         </dependency>
 
 
-        <!--解决找不到 javax.annotation.meta.When.MAYBE
+        <!--解决找不到 javax.annotation.meta.When.MAYBE-->
         <dependency>
             <groupId>com.google.code.findbugs</groupId>
             <artifactId>annotations</artifactId>
             <version>3.0.1</version>
         </dependency>
-		-->
-    </dependencies>
 
+    </dependencies>
 </project>

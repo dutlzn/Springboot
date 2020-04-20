@@ -2,14 +2,14 @@
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
-  <th:block th:replace="fragments/head" />
+  <th:block th:replace="fragments/head :: public-css"/>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed ">
 <!-- Site wrapper -->
 <div class="wrapper">
 
   <!-- 头部区域 Navbar -->
-  <th:block th:replace="fragments/main-header" />
+  <th:block th:replace="fragments/main-header"/>
   <!-- /.navbar -->
 
   <!-- 左侧区域 Main Sidebar Container -->
@@ -25,12 +25,10 @@
   <th:block th:replace="fragments/main-footer"/>
 
   <!-- 右上角工具栏 Control Sidebar -->
-  <th:block th:replace="fragments/main-sidebar"/>
-  <!-- /.control-sidebar -->
+  <th:block th:replace="fragments/control-sidebar"/>
+
 </div>
 <!-- ./wrapper -->
-
-<!--js公共代码-->
-<th:block th:replace="fragments/script"/>
+<th:block th:replace="fragments/script :: public-js"/>
 </body>
 </html>
