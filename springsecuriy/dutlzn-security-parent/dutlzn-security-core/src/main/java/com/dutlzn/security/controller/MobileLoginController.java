@@ -1,6 +1,6 @@
 package com.dutlzn.security.controller;
 
-import com.dutlzn.base.result.MengxueguResult;
+import com.dutlzn.base.result.MyResult;
 import com.dutlzn.security.authentication.mobile.SmsSend;
 import org.apache.commons.lang.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,7 +37,7 @@ public class MobileLoginController {
      */
     @ResponseBody //响应json字符串
     @RequestMapping("/code/mobile")
-    public MengxueguResult smsCode(HttpServletRequest request) {
+    public MyResult smsCode(HttpServletRequest request) {
         // 1. 生成一个手机验证码
         String code = RandomStringUtils.randomNumeric(4);
         // 2. 将手机验证码保存到session中
@@ -46,6 +46,6 @@ public class MobileLoginController {
         String mobile = request.getParameter("mobile");
         smsSend.sendSms(mobile, code);
 
-        return MengxueguResult.ok();
+        return MyResult.ok();
     }
 }

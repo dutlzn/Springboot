@@ -1,7 +1,7 @@
 package com.dutlzn.security.authentication;
 
 import com.alibaba.fastjson.JSON;
-import com.dutlzn.base.result.MengxueguResult;
+import com.dutlzn.base.result.MyResult;
 import com.dutlzn.security.properites.LoginResponseType;
 import com.dutlzn.security.properites.SecurityProperties;
 import org.slf4j.Logger;
@@ -35,7 +35,7 @@ public class CustomAuthenticationSuccessHandler extends SavedRequestAwareAuthent
         if(LoginResponseType.JSON.equals(
                     securityProperties.getAuthentication().getLoginType())) {
             // 认证成功后，响应JSON字符串
-            MengxueguResult result = MengxueguResult.ok("认证成功");
+            MyResult result = MyResult.ok("认证成功");
             response.setContentType("application/json;charset=UTF-8");
             response.getWriter().write(result.toJsonString());
         }else {

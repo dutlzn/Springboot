@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
  * @Auther: 梦学谷 www.mengxuegu.com
  */
 @Component // 不要少了
-@ConfigurationProperties(prefix = "mengxuegu.security")
+@ConfigurationProperties(prefix = "dutlzn.security")
 public class SecurityProperties {
 
     // 会将 mengxuegu.security.authentication 下面的值绑定到AuthenticationProperties对象上

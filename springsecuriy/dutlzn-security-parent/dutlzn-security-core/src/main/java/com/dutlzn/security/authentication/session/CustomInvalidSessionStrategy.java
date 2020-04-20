@@ -1,6 +1,6 @@
 package com.dutlzn.security.authentication.session;
 
-import com.dutlzn.base.result.MengxueguResult;
+import com.dutlzn.base.result.MyResult;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -35,7 +35,7 @@ public class CustomInvalidSessionStrategy implements InvalidSessionStrategy {
         // 要将浏览器中的cookie的jsessionid删除
         cancelCookie(request, response);
 
-        MengxueguResult result = new MengxueguResult().build(
+        MyResult result = new MyResult().build(
                 HttpStatus.UNAUTHORIZED.value(), "登录已超时，请重新登录");
 
         response.setContentType("application/json;charset=utf-8");

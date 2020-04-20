@@ -23,7 +23,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
 
 
-mengxuegu:
+dutlzn:
        security:
          authentication:
            loginPage: /login/page # 响应认证(登录)页面的URL

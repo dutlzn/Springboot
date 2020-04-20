@@ -1,6 +1,6 @@
 package com.dutlzn.security.authentication;
 
-import com.dutlzn.base.result.MengxueguResult;
+import com.dutlzn.base.result.MyResult;
 import com.dutlzn.security.properites.LoginResponseType;
 import com.dutlzn.security.properites.SecurityProperties;
 import org.apache.commons.lang.StringUtils;
@@ -34,7 +34,7 @@ public class CustomAuthenticationFailureHandler extends SimpleUrlAuthenticationF
             HttpServletResponse response, AuthenticationException exception) throws IOException, ServletException {
         if(LoginResponseType.JSON.equals(securityProperties.getAuthentication().getLoginType())) {
             // 认证失败响应JSON字符串，
-            MengxueguResult result = MengxueguResult.build(HttpStatus.UNAUTHORIZED.value(), exception.getMessage());
+            MyResult result = MyResult.build(HttpStatus.UNAUTHORIZED.value(), exception.getMessage());
             response.setContentType("application/json;charset=UTF-8");
             response.getWriter().write(result.toJsonString());
         }else {
