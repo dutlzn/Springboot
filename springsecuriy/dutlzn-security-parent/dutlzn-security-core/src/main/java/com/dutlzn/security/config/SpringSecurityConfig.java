@@ -150,7 +150,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                     .invalidSessionStrategy(invalidSessionStrategy) //当session失效后的处理类
                     .maximumSessions(1) // 每个用户在系统中最多可以有多少个session
                     .expiredSessionStrategy(sessionInformationExpiredStrategy)// 当用户达到最大session数后，则调用此处的实现
-                    .maxSessionsPreventsLogin(true) // 当一个用户达到最大session数,则不允许后面再登录
+//                    .maxSessionsPreventsLogin(true) // 当一个用户达到最大session数,则不允许后面再登录
                     .sessionRegistry(sessionRegistry())
                 .and().and()
                     .logout()
